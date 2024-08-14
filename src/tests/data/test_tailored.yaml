@@ -1,0 +1,96 @@
+name: Vuong Ho
+phone: "(585) 606-0796"
+email: vuong@vuongho.me
+website: vuongho.me
+linkedin: vuongho
+github: goodudetheboy
+
+education_list:
+  - institution: "University of Rochester"
+    graduation: "Expected Dec 2025"
+    degree: "MS in Computer Science"
+  - institution: "University of Rochester"
+    graduation: "May 2024"
+    degree: "BS in Computer Science, BS in Applied Mathematics"
+    gpa: "3.79/4.00"
+  - institution: "CodePath"
+    graduation: "May -- Aug 2022"
+    degree: "Advanced Software Engineering Certificate"
+
+skills:
+  languages:
+    [
+      "Python",
+      "Java",
+      "JavaScript",
+      "Typescript",
+      "SQL",
+      "Kotlin",
+      "Flutter",
+      "HTML/CSS",
+    ]
+  tools:
+    [
+      "Git",
+      "VS Code",
+      "Bash",
+      "GitHub Actions",
+      "Android Studio",
+      "SonarCloud",
+      "Elasticsearch",
+      "ChatGPT",
+    ]
+  frameworks:
+    [
+      "Docker",
+      "AWS",
+      "Google Cloud Platform",
+      "Linux",
+      "Node.js",
+      "React.js",
+      "Gradle",
+      "MongoDB",
+      "Jest",
+      "JavaCC",
+    ]
+  methodologies:
+    [
+      "DevOps",
+      "Agile",
+      "Scrum",
+      "Test-Driven Development",
+      "GitHub Projects",
+      "Jira",
+      "Slack",
+    ]
+
+experience_list:
+  - company: "Meta & Major League Hacking"
+    duration: "Jun 2024 -- Present"
+    role: "Site Reliability Engineering Fellow"
+    location: "Rochester, NY"
+    items:
+      - "Chosen as one of the top 2% out of 2,500 applicants for the elite Meta & MLH Production Engineering Fellowship."
+      - "Develop a Flask project from scratch and deploy it on cloud servers with Nginx reverse proxy and SSL certificates."
+      - "Leverage GitHub Actions for CI/CD, test-driven development, and Docker to achieve 90% faster deployment times."
+
+  # Add more experience entries here...
+
+project_list:
+  - name: "SwipeAndFly"
+    link: "https://devpost.com/software/vietrochack"
+    description: "hyper-personalized trip planning with TikTok videos"
+    duration: "Jun -- Aug 2024"
+    items:
+      - "Led a team of 5 developers to create a hyper-personalized trip planning platform tailored to users' travel TikTok videos."
+      - "Architected and deployed a scalable AWS microservices backend with a Vite frontend, achieving 99.9% uptime and global deployment on Firebase."
+      - "Received 150+ likes and votes, the most liked project out of 219 teams, in the TikTok TechJam 2024 hackathon."
+
+  # Add more project entries here...
+
+awards_list:
+  - name: "YHack 2024 Hackathon at Yale University"
+    description: "Best Education Award"
+    date: "Mar 2024"
+
+  # Add more awards entries here...
