@@ -1,0 +1,234 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage{fontawesome5}
+\usepackage{multicol}
+\usepackage{calc} % added
+\setlength{\multicolsep}{-3.0pt}
+\setlength{\columnsep}{-1pt}
+\input{glyphtounicode}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.6in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1.19in}
+\addtolength{\topmargin}{-.7in}
+\addtolength{\textheight}{1.4in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large\bfseries
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+\newcommand{\resumeSubheadingNormal}[2]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \small #1 & \textbf{\small #2} \\
+    \end{tabular*}\vspace{-3pt}
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+\newcommand{\resumeSubSubheadingLeft}[2]{ % added
+\begin{description}[leftmargin=!,labelwidth=\widthof{\small\bfseries #1}]
+    \item[\small #1]{\textit{\small  #2}}
+\end{description}
+}
+
+\begin{document}
+\begin{center}
+  {\Huge \scshape Vuong Ho} \\ \vspace{1pt}
+  % 123 Street Name, Town, State 12345 \\ \vspace{1pt}
+  \small \raisebox{-0.1\height}
+  \faPhone\ (585) 606-0796
+  ~ \href{mailto:vuong@vuongho.me}{\raisebox{-0.2\height} \faEnvelope\ \underline{ vuong@vuongho.me }}
+  ~ \href{https://vuongho.me}{\raisebox{-0.2\height} \faHome\ \underline{ vuongho.me }}
+  ~ \href{https://linkedin.com/in/vuongho}{\raisebox{-0.2\height} \faLinkedin\ \underline{in/vuongho}}
+  ~ \href{https://github.com/goodudetheboy}{\raisebox{-0.2\height} \faGithub\ \underline{ goodudetheboy }}
+  \vspace{-8pt}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+  
+    \resumeSubheading
+      { University of Rochester }{ Expected Dec 2025 }
+      { MS in Computer Science } { Incoming }
+  
+    \resumeSubheading
+      { University of Rochester }{ May 2024 }
+      { BS in Computer Science, BS in Applied Mathematics } { 3.79/4.00 }
+  
+    \resumeSubheading
+      { CodePath }{ May -- Aug 2022 }
+      { Advanced Software Engineering Certificate } { Remote }
+  
+  \resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{Languages}{: Python, Java, JavaScript, Typescript, SQL, Kotlin, Flutter, HTML/CSS} \\
+     \textbf{Developer Tools}{: Git, VS Code, Bash, GitHub Actions, Android Studio, SonarCloud, Elasticsearch, ChatGPT} \\
+     \textbf{Frameworks}{: Docker, AWS, Google Cloud Platform, Linux, Node.js, React.js, Gradle, MongoDB, Jest, JavaCC} \\
+     \textbf{Collaborative Methodologies}{: DevOps, Agile, Scrum, Test-Driven Development, GitHub Projects, Jira, Slack} \\
+    }}
+ \end{itemize}
+ \vspace{-16pt}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+  
+    \resumeSubheading
+      { Meta \& Major League Hacking }{ Jun 2024 -- Present }
+      { Site Reliability Engineering Fellow }{ Rochester, NY }
+      \resumeItemListStart
+      
+        \resumeItem{ Chosen as one of the top 2\% out of 2,500 applicants for the elite Meta \& MLH Production Engineering Fellowship. }
+      
+        \resumeItem{ Develop a Flask project from scratch and deploy it on cloud servers with Nginx reverse proxy and SSL certificates. }
+      
+        \resumeItem{ Leverage GitHub Actions for CI/CD, test-driven development, and Docker to achieve 90\% faster deployment times. }
+      
+      \resumeItemListEnd
+  
+    \resumeSubheading
+      { Google Summer of Code 2021 }{ May -- Aug 2021 }
+      { Software Engineer Intern }{ Rochester, NY }
+      \resumeItemListStart
+      
+        \resumeItem{ Engineered a key feature for OpenStreetMap’s Vespucci Android app that efficiently evaluates user input opening hrs. }
+      
+        \resumeItem{ Implemented an evaluator that processes opening hours of 140,000+ locations with Java, Gradle, and Github Actions. }
+      
+        \resumeItem{ Supported a grammar system of 80+ rules, expanding coverage from 10\% to approximately 100\% of the specification. }
+      
+      \resumeItemListEnd
+  
+  \resumeSubHeadingListEnd
+\vspace{-16pt}
+
+%-----------PROJECTS-----------
+\section{Technical Projects}
+    \vspace{-5pt}
+    \resumeSubHeadingListStart
+    
+      \resumeProjectHeading
+      {\href{ https://devpost.com/software/vietrochack }{\textbf{SwipeAndFly}} $|$ \emph{ hyper-personalized trip planning with TikTok videos }}{ Jun -- Aug 2024 }
+      \resumeItemListStart
+      
+        \resumeItem{ Led a team of 5 developers to create a hyper-personalized trip planning platform tailored to users' travel TikTok. }
+      
+        \resumeItem{ Architected and deployed a scalable AWS microservices backend with a Vite frontend, achieving 99.9\% uptime and global deployment on Firebase, 40\% faster load times, supported by a Github Actions CI/CD pipeline with 90\% coverage. }
+      
+        \resumeItem{ Received 150+ likes and votes, the most liked project out of 219 teams, in the TikTok TechJam 2024 hackathon. }
+      
+      \resumeItemListEnd
+      
+        \vspace{-13pt}
+      
+    
+      \resumeProjectHeading
+      {\href{ https://devpost.com/software/eduvision-y9fw0g }{\textbf{EduVision}} $|$ \emph{ eye-tracking powered classroom assistance system }}{ Mar -- May 2024 }
+      \resumeItemListStart
+      
+        \resumeItem{ Led a team of 3 in developing a classroom assistance system that utilizes real-time eye-tracking to detect possible confusing topics using students’ gaze heatmap and provide classroom statistics to assist instructors with their teach. }
+      
+        \resumeItem{ Won Best Education Award out of 43 teams at YHack 2024 hackathon hosted at Yale University. }
+      
+      \resumeItemListEnd
+      
+    
+    \resumeSubHeadingListEnd
+\vspace{-15pt}
+
+%-----------AWARDS---------------
+\section{Awards}
+    \resumeSubHeadingListStart
+    
+        \resumeSubheadingNormal{\textbf{ YHack 2024 Hackathon at Yale University } | \textit{ Best Education Award }}{ Mar 2024 }
+        \vspace{-16pt}
+    
+        \resumeSubheadingNormal{\textbf{ DandyHacks’23 Hackathon at University of Rochester } | \textit{ Most Dandy Hack Award }}{ Nov 2023 }
+        \vspace{-16pt}
+    
+        \resumeSubheadingNormal{\textbf{ ICPC Northeast North America Regional Contest 2023 } | \textit{ Rank 36/93 }}{ Oct 2023 }
+        \vspace{-16pt}
+    
+        \resumeSubheadingNormal{\textbf{ ICPC Northeast North America Regional Contest 2022 } | \textit{ Rank 15/84 — Bronze Medal }}{ Feb 2023 }
+        \vspace{-16pt}
+    
+    \resumeSubHeadingListEnd
+
+\end{document}

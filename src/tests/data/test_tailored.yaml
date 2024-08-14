@@ -1,96 +1,108 @@
 name: Vuong Ho
-phone: "(585) 606-0796"
+phone: (585) 606-0796
 email: vuong@vuongho.me
 website: vuongho.me
 linkedin: vuongho
 github: goodudetheboy
 
 education_list:
-  - institution: "University of Rochester"
-    graduation: "Expected Dec 2025"
-    degree: "MS in Computer Science"
-  - institution: "University of Rochester"
-    graduation: "May 2024"
-    degree: "BS in Computer Science, BS in Applied Mathematics"
-    gpa: "3.79/4.00"
-  - institution: "CodePath"
-    graduation: "May -- Aug 2022"
-    degree: "Advanced Software Engineering Certificate"
+  - institution: University of Rochester
+    graduation: Expected Dec 2025
+    degree: MS in Computer Science
+    extra_info: Incoming
+  - institution: University of Rochester
+    graduation: May 2024
+    degree: BS in Computer Science, BS in Applied Mathematics
+    extra_info: 3.79/4.00
+  - institution: CodePath
+    graduation: May -- Aug 2022
+    degree: Advanced Software Engineering Certificate
+    extra_info: Remote
 
 skills:
   languages:
-    [
-      "Python",
-      "Java",
-      "JavaScript",
-      "Typescript",
-      "SQL",
-      "Kotlin",
-      "Flutter",
-      "HTML/CSS",
-    ]
+    [Python, Java, JavaScript, Typescript, SQL, Kotlin, Flutter, HTML/CSS]
   tools:
     [
-      "Git",
-      "VS Code",
-      "Bash",
-      "GitHub Actions",
-      "Android Studio",
-      "SonarCloud",
-      "Elasticsearch",
-      "ChatGPT",
+      Git,
+      VS Code,
+      Bash,
+      GitHub Actions,
+      Android Studio,
+      SonarCloud,
+      Elasticsearch,
+      ChatGPT,
     ]
   frameworks:
     [
-      "Docker",
-      "AWS",
-      "Google Cloud Platform",
-      "Linux",
-      "Node.js",
-      "React.js",
-      "Gradle",
-      "MongoDB",
-      "Jest",
-      "JavaCC",
+      Docker,
+      AWS,
+      Google Cloud Platform,
+      Linux,
+      Node.js,
+      React.js,
+      Gradle,
+      MongoDB,
+      Jest,
+      JavaCC,
     ]
   methodologies:
     [
-      "DevOps",
-      "Agile",
-      "Scrum",
-      "Test-Driven Development",
-      "GitHub Projects",
-      "Jira",
-      "Slack",
+      DevOps,
+      Agile,
+      Scrum,
+      Test-Driven Development,
+      GitHub Projects,
+      Jira,
+      Slack,
     ]
 
 experience_list:
-  - company: "Meta & Major League Hacking"
-    duration: "Jun 2024 -- Present"
-    role: "Site Reliability Engineering Fellow"
-    location: "Rochester, NY"
-    items:
-      - "Chosen as one of the top 2% out of 2,500 applicants for the elite Meta & MLH Production Engineering Fellowship."
-      - "Develop a Flask project from scratch and deploy it on cloud servers with Nginx reverse proxy and SSL certificates."
-      - "Leverage GitHub Actions for CI/CD, test-driven development, and Docker to achieve 90% faster deployment times."
+  - company: Meta & Major League Hacking
+    duration: Jun 2024 -- Present
+    role: Site Reliability Engineering Fellow
+    location: Rochester, NY
+    details:
+      - Chosen as one of the top 2% out of 2,500 applicants for the elite Meta & MLH Production Engineering Fellowship.
+      - Develop a Flask project from scratch and deploy it on cloud servers with Nginx reverse proxy and SSL certificates.
+      - Leverage GitHub Actions for CI/CD, test-driven development, and Docker to achieve 90% faster deployment times.
 
-  # Add more experience entries here...
+  - company: Google Summer of Code 2021
+    duration: May -- Aug 2021
+    role: Software Engineer Intern
+    location: Rochester, NY
+    details:
+      - Engineered a key feature for OpenStreetMap’s Vespucci Android app that efficiently evaluates user input opening hrs.
+      - Implemented an evaluator that processes opening hours of 140,000+ locations with Java, Gradle, and Github Actions.
+      - Supported a grammar system of 80+ rules, expanding coverage from 10% to approximately 100% of the specification.
 
 project_list:
-  - name: "SwipeAndFly"
-    link: "https://devpost.com/software/vietrochack"
-    description: "hyper-personalized trip planning with TikTok videos"
-    duration: "Jun -- Aug 2024"
-    items:
-      - "Led a team of 5 developers to create a hyper-personalized trip planning platform tailored to users' travel TikTok videos."
-      - "Architected and deployed a scalable AWS microservices backend with a Vite frontend, achieving 99.9% uptime and global deployment on Firebase."
-      - "Received 150+ likes and votes, the most liked project out of 219 teams, in the TikTok TechJam 2024 hackathon."
-
-  # Add more project entries here...
+  - name: SwipeAndFly
+    link: https://devpost.com/software/vietrochack
+    description: hyper-personalized trip planning with TikTok videos
+    duration: Jun -- Aug 2024
+    details:
+      - Led a team of 5 developers to create a hyper-personalized trip planning platform tailored to users' travel TikTok.
+      - Architected and deployed a scalable AWS microservices backend with a Vite frontend, achieving 99.9% uptime and global deployment on Firebase, 40% faster load times, supported by a Github Actions CI/CD pipeline with 90% coverage.
+      - Received 150+ likes and votes, the most liked project out of 219 teams, in the TikTok TechJam 2024 hackathon.
+  - name: EduVision
+    link: https://devpost.com/software/eduvision-y9fw0g
+    description: eye-tracking powered classroom assistance system
+    duration: Mar -- May 2024
+    details:
+      - Led a team of 3 in developing a classroom assistance system that utilizes real-time eye-tracking to detect possible confusing topics using students’ gaze heatmap and provide classroom statistics to assist instructors with their teach.
+      - Won Best Education Award out of 43 teams at YHack 2024 hackathon hosted at Yale University.
 
 awards_list:
-  - name: "YHack 2024 Hackathon at Yale University"
-    description: "Best Education Award"
-    date: "Mar 2024"
-
-  # Add more awards entries here...
+  - name: YHack 2024 Hackathon at Yale University
+    description: Best Education Award
+    date: Mar 2024
+  - name: DandyHacks’23 Hackathon at University of Rochester
+    description: Most Dandy Hack Award
+    date: Nov 2023
+  - name: ICPC Northeast North America Regional Contest 2023
+    description: Rank 36/93
+    date: Oct 2023
+  - name: ICPC Northeast North America Regional Contest 2022
+    description: Rank 15/84 — Bronze Medal
+    date: Feb 2023
