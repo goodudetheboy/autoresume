@@ -1,5 +1,6 @@
 import yaml
 from jinja2 import Environment, FileSystemLoader
+import os
 
 # Setup Jinja2 environment and load template
 file_loader = FileSystemLoader('templates')
@@ -61,7 +62,7 @@ def read_yaml_and_write_latex(yaml_file, output_file):
 	with open(output_file, 'w') as file:
 		file.write(latex_string)
 
-	print(f"LaTeX file '{output_file}' has been generated successfully.")
+	return os.path.abspath(output_file)
 
 # Example usage
 # read_yaml_and_write_latex('data.yaml', 'resume.tex')

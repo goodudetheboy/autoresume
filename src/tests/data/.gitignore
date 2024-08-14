@@ -1,0 +1,7 @@
+*
+
+!.gitignore
+!test_*.tex
+!test_*.yaml
+
+
