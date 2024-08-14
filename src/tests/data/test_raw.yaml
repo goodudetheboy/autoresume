@@ -1,0 +1,138 @@
+name: Vuong Ho
+phone: "(585) 606-0796"
+email: "vuong@vuongho.me"
+website: "https://vuongho.me/"
+linkedin: "https://linkedin.com/in/vuongho/"
+github: "https://github.com/goodudetheboy/"
+
+education_list:
+  - institution: "University of Rochester"
+    graduation: "Expected Dec 2025"
+    degree: "MS in Computer Science"
+    extra_info: ""
+  - institution: "University of Rochester"
+    graduation: "May 2024"
+    degree: "BS in Computer Science, BS in Applied Mathematics, Operations Research Certificate"
+    extra_info: "GPA: 3.79/4.00"
+  - institution: "CodePath"
+    graduation: "May – Aug 2022"
+    degree: "Advanced Software Engineering Certificate"
+    extra_info: "Remote"
+
+skills:
+  languages:
+    [
+      "Python",
+      "Java",
+      "JavaScript",
+      "Typescript",
+      "Flutter",
+      "Kotlin",
+      "HTML/CSS",
+      "SQL",
+    ]
+  tools:
+    [
+      "VS Code",
+      "Git",
+      "ChatGPT",
+      "Github Actions",
+      "Android Studio",
+      "SonarCloud",
+      "Elasticsearch",
+      "Bash",
+    ]
+  frameworks:
+    [
+      "Gradle",
+      "Node.js",
+      "MongoDB",
+      "AWS",
+      "Google Cloud Platform",
+      "React.js",
+      "Jest",
+      "JavaCC",
+      "Linux",
+      "Docker",
+    ]
+  methodologies:
+    [
+      "Agile",
+      "Scrum",
+      "DevOps",
+      "Test-Driven Development",
+      "Slack",
+      "Github Projects",
+      "Jira",
+    ]
+
+experience_list:
+  - company: "Meta & Major League Hacking"
+    duration: "Jun 2024 – Present"
+    role: "Site Reliability Engineering Fellow"
+    location: "Rochester, NY"
+    details:
+      - "Chosen as one of the top 2% out of 2,500 applicants for the elite Meta & MLH Production Engineering Fellowship."
+      - "Developed a Flask project from scratch and deployed it on cloud servers with Nginx reverse proxy and SSL certificates."
+      - "Leveraged GitHub Actions for CI/CD, test-driven development, and Docker to achieve 90% faster deployment times."
+
+  - company: "Vietnam Tech Society"
+    duration: "Jun 2022 – Jan 2023"
+    role: "Software Engineer Intern"
+    location: "Rochester, NY"
+    details:
+      - "Delivered a robust TypeScript and Firebase project that enables users to configure and filter appointment availability."
+      - "Deployed the “Filter by Availability” feature with 100% test coverage, resulting in a 90% improvement in usability."
+      - "Reduced server cost by 25% by optimizing backend Firebase functions to operate dynamically rather than periodically."
+
+  - company: "Google Summer of Code 2021"
+    duration: "May – Aug 2021"
+    role: "Software Engineer Intern"
+    location: "Rochester, NY"
+    details:
+      - "Engineered a key feature for OpenStreetMap’s Vespucci Android app that efficiently evaluates user input opening hours."
+      - "Implemented an evaluator that processes opening hours of 140,000+ locations with Java, Gradle, and Github Actions."
+      - "Supported a grammar system of 80+ rules, expanding coverage from 10% to approximately 100% of the specification."
+
+  - company: "University of Rochester"
+    duration: "Sep 2021 – May 2024"
+    role: "Teaching Assistant"
+    location: "Rochester, NY"
+    details:
+      - "Courses: Artificial Intelligence, Computation & Formal System, Programming Language Design, Discrete Mathematics."
+      - "Facilitated weekly study sessions for 30 students, focusing on advanced computer science and mathematics concepts."
+
+project_list:
+  - name: "SwipeAndFly"
+    link: "https://devpost.com/software/vietrochack"
+    description: "Hyper-personalized trip planning with TikTok videos."
+    duration: "Jun – Aug 2024"
+    details:
+      - "Led a team of 5 developers to create a hyper-personalized trip planning platform tailored to users’ travel TikTok videos."
+      - "Architected and deployed a scalable AWS microservices backend with a Vite frontend, achieving 99.9% uptime and global deployment on Firebase, 40% faster load times, supported by a Github Actions CI/CD pipeline with 90% test coverage."
+      - "Received 150+ likes and votes, the most liked project out of 219 teams, in the TikTok TechJam 2024 hackathon."
+
+  - name: "EduVision"
+    link: "https://devpost.com/software/eduvision-y9fw0g"
+    description: "Eye-tracking powered classroom assistance system."
+    duration: "Mar – May 2024"
+    details:
+      - "Led a team of 3 in developing a classroom assistance system that utilizes real-time eye-tracking to detect possible confusing topics using students’ gaze heatmap and provide classroom statistics to assist instructors with their teaching."
+      - "Won Best Education Award out of 43 teams at YHack 2024 hackathon hosted at Yale University."
+
+awards_list:
+  - name: "YHack 2024 Hackathon at Yale University"
+    description: "Best Education Award"
+    date: "Mar 2024"
+
+  - name: "DandyHacks’23 Hackathon at University of Rochester"
+    description: "Most Dandy Hack Award"
+    date: "Nov 2023"
+
+  - name: "ICPC Northeast North America Regional Contest 2023"
+    description: "Rank 36/93"
+    date: "Oct 2023"
+
+  - name: "ICPC Northeast North America Regional Contest 2022"
+    description: "Rank 15/84 — Bronze Medal"
+    date: "Feb 2023"
