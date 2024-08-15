@@ -38,7 +38,7 @@ class ContentToResumeTest(unittest.TestCase):
 
 		output_path = read_yaml_and_write_latex("./tests/data/test_tailored.yaml", "./tests/data/actual_tailored.tex")
 
-		result = subprocess.run(["pdflatex", "-output-directory", "./tests/data", output_path], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+		result = subprocess.run(["pdflatex", "-halt-on-error", "-output-directory", "./tests/data", output_path], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
 		self.assertEqual(result.returncode, 0)
 
