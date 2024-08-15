@@ -17,7 +17,7 @@ class IntegrationTest(unittest.TestCase):
 
 		tailored_resume = result["resume"]
 
-		latex_string = render_data_to_latex(tailored_resume)
+		latex_string = render_data(tailored_resume)
 
 		with open("./tests/data/actual_tailored.tex", 'w') as file:
 			file.write(latex_string)

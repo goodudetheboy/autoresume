@@ -32,31 +32,25 @@ class SystemInterfaceTest(unittest.TestCase):
 		self.assertEqual(job_description, "Software Engineer position")
 		mock_file.assert_called_once_with("job_description.txt", "r")
 	
-	@patch("cli.tailor_resume_by_job_description")
-	@patch("cli.os.makedirs")
-	@patch("cli.render_data")
 	@patch("argparse.ArgumentParser.parse_args")
 	def test_main_with_both_pdf_and_latex(
 		self,
 		mock_parse_args: Mock,
-		mock_render_data: Mock,
-		mock_makedirs: Mock,
-		mock_tailor_resume_by_job_description: Mock,
 	):
 		with tempfile.TemporaryDirectory() as temp_output_dir:
 			mock_parse_args.return_value = argparse.Namespace(
-				resume=self.temp_resume_yaml,
-				job_description=self.temp_job_description,
+				resume="./tests/data/test_raw.yaml",
+				job_description="./tests/data/test_job_description.txt",
+				resume_name="tailored_resume",
 				pdf=True,
 				tex=True,
 				output_dir_pdf=temp_output_dir,
 				output_dir_tex=temp_output_dir
 			)
 			
-			mock_tailor_resume_by_job_description.return_value = {"name": "Vuong Ho"}
-
 			main()
-
-			mock_tailor_resume_by_job_description.assert_called_once_with({"name": "Vuong Ho"}, "PayPal - Software Engineering Intern")
-			self.assertEqual(mock_makedirs.call_count, 2)
-			mock_render_data.assert_called_once_with({"name": "Vuong Ho"})
+			output_tex_dir = os.path.join(temp_output_dir, "tailored_resume.tex")
+			output_pdf_dir = os.path.join(temp_output_dir, "tailored_resume.pdf")
+			print(output_tex_dir, output_pdf_dir)
+			self.assertTrue(os.path.exists(output_tex_dir))
+			self.assertTrue(os.path.exists(output_pdf_dir))
