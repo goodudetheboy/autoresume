@@ -69,7 +69,6 @@ def main():
 	)
 
 	# Print resume in YAML
-	print()
 	print("Here is your resume in YAML")
 	print(yaml.safe_dump(analysis["resume"]))
 
@@ -77,13 +76,15 @@ def main():
 	print("Keywords detected in your job description: ")
 	for keyword in analysis["keywords"]:
 		print(f"\t- {keyword}")
+	print()
 	
+	# Print confirmation
 	if args.tex:
-		output_latex_path = os.path.join(args.output_dir_tex, f"{args.resume_name}.tex" )
+		output_latex_path = os.path.join(args.output_dir_tex, f"{args.resume_name}.tex")
 		print(f"Your resume has been saved into a LaTeX file at {os.path.abspath(output_latex_path)}")
 	if args.pdf:
-		output_pdf_path = os.path.join(args.output_dir_pdf, f"{args.resume_name}.pdf" )
-		print(f"Your resume has been saved into a PDF at {os.path.abspath(output_pdf_path)}")
+		output_pdf_path = os.path.join(args.output_dir_pdf, f"{args.resume_name}.pdf")
+		print(f"Your resume has been saved into a PDF file at {os.path.abspath(output_pdf_path)}")
 
 if __name__ == "__main__":
 	main()
