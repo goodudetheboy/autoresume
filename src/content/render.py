@@ -1,6 +1,8 @@
 import yaml
+import tempfile
 from jinja2 import Environment, FileSystemLoader
 import os
+import subprocess
 
 # Setup Jinja2 environment and load template
 file_loader = FileSystemLoader("templates")
@@ -11,7 +13,12 @@ env = Environment(
 	)
 template = env.get_template("resume_template.jinja")
 
-def render_data_to_latex(data):
+def render_data(
+		data,
+		resume_name="tailored_resume",
+		output_latex_path=None,
+		output_pdf_path=None
+	):
 	"""
 	Converts a dictionary of resume data to a LaTeX string using a Jinja2 template.
 
@@ -40,7 +47,44 @@ def render_data_to_latex(data):
 		awards_list=data["awards_list"]
 	)
 
+	if output_latex_path:
+		with open(os.path.join(output_latex_path, f"{resume_name}.tex"), "w") as latex_file:
+			latex_file.write(latex_string)
+	
+	if output_pdf_path:
+		render_latex_to_pdf(latex_string, output_pdf_path, resume_name)
+
+
 	return latex_string
+
+def render_latex_to_pdf(latex_content, output_pdf_path, resume_name="tailored_resume"):
+	try:
+		# Create a temporary file to hold the LaTeX content
+		with tempfile.NamedTemporaryFile(delete=False, suffix=".tex") as temp_file:
+			temp_file.write(latex_content.encode('utf-8'))
+			temp_file_path = temp_file.name
+
+		# Run pdflatex command
+		process = subprocess.run(
+			[
+				"pdflatex",
+				"-halt-on-error",
+				"-output-directory",
+				output_pdf_path,
+				"-jobname",
+				resume_name,
+				temp_file_path
+			],
+			stdout=subprocess.DEVNULL,
+			stderr=subprocess.DEVNULL
+		)
+		os.remove(temp_file_path)
+
+		return process.returncode == 0
+
+	except Exception as e:
+		print("An error occurred when generating pdf file:", str(e))
+		return False
 
 def read_yaml_and_write_latex(yaml_file, output_file):
 	"""
@@ -56,7 +100,7 @@ def read_yaml_and_write_latex(yaml_file, output_file):
 
 
 	# Generate LaTeX string from dictionary
-	latex_string = render_data_to_latex(data)
+	latex_string = render_data(data)
 
 	# Save the rendered LaTeX to a file
 	with open(output_file, "w") as file:

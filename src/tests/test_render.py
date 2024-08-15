@@ -42,3 +42,11 @@ class ContentToResumeTest(unittest.TestCase):
 
 		self.assertEqual(result.returncode, 0)
 
+	def test_render_latex_to_pdf(self):
+		with open("./tests/data/test_tailored.yaml", 'r') as file:
+			data = yaml.safe_load(file)
+
+
+		render_data(data, output_pdf_path="./temp")
+		
+		self.assertTrue(os.path.exists("./temp/tailored_resume.pdf"))

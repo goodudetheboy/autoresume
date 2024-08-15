@@ -42,7 +42,7 @@ def main():
 		os.makedirs(args.output_dir_pdf, exist_ok=True)
 	if args.tex:
 		os.makedirs(args.output_dir_tex, exist_ok=True)
-	print(args)
+
 	# Handle LaTeX rendering and PDF generation
 	render_data(
 		analysis["resume"],
@@ -57,9 +57,9 @@ def main():
 		print(f"\t- {keyword}")
 	
 	# Print resume in YAML
-	# print()
-	# print("Here is your resume in YAML")
-	# print(yaml.safe_dump(analysis["resume"]))
+	print()
+	print("Here is your resume in YAML")
+	print(yaml.safe_dump(analysis["resume"]))
 
 	if args.tex:
 		output_latex_path = os.path.join(args.output_dir_tex, f"{args.resume_name}.tex" )

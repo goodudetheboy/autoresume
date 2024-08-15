@@ -8,11 +8,11 @@ from cli import load_yaml_file, load_job_description, main
 
 class SystemInterfaceTest(unittest.TestCase):
 	def setUp(self):
-		with tempfile.NamedTemporaryFile(delete=False, suffix=".yaml") as temp_file:
+		with tempfile.NamedTemporaryFile(dir=os.getcwd(), delete=False, suffix=".yaml") as temp_file:
 			temp_file.write("name: Vuong Ho".encode('utf-8'))
 			self.temp_resume_yaml = temp_file.name
 
-		with tempfile.NamedTemporaryFile(delete=False, suffix=".txt") as temp_file:
+		with tempfile.NamedTemporaryFile(dir=os.getcwd(), delete=False, suffix=".txt") as temp_file:
 			temp_file.write("PayPal - Software Engineering Intern".encode('utf-8'))
 			self.temp_job_description = temp_file.name
 
@@ -37,7 +37,7 @@ class SystemInterfaceTest(unittest.TestCase):
 		self,
 		mock_parse_args: Mock,
 	):
-		with tempfile.TemporaryDirectory() as temp_output_dir:
+		with tempfile.TemporaryDirectory(dir=os.getcwd()) as temp_output_dir:
 			mock_parse_args.return_value = argparse.Namespace(
 				resume="./tests/data/test_raw.yaml",
 				job_description="./tests/data/test_job_description.txt",
