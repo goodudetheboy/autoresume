@@ -3,13 +3,13 @@ from jinja2 import Environment, FileSystemLoader
 import os
 
 # Setup Jinja2 environment and load template
-file_loader = FileSystemLoader('templates')
+file_loader = FileSystemLoader("templates")
 env = Environment(
 		loader=file_loader, 
-		comment_start_string='{=',
-		comment_end_string='=}',
+		comment_start_string="{=",
+		comment_end_string="=}",
 	)
-template = env.get_template('resume_template.jinja')
+template = env.get_template("resume_template.jinja")
 
 def render_data_to_latex(data):
 	"""
@@ -27,17 +27,17 @@ def render_data_to_latex(data):
 
 	# Render the LaTeX template with data
 	latex_string = template.render(
-		name=data['name'],
-		phone=data['phone'],
-		email=data['email'],
-		website=data['website'],
-		linkedin=data['linkedin'],
-		github=data['github'],
-		education_list=data['education_list'],
-		skills=data['skills'],
-		experience_list=data['experience_list'],
-		project_list=data['project_list'],
-		awards_list=data['awards_list']
+		name=data["name"],
+		phone=data["phone"],
+		email=data["email"],
+		website=data["website"],
+		linkedin=data["linkedin"],
+		github=data["github"],
+		education_list=data["education_list"],
+		skills=data["skills"],
+		experience_list=data["experience_list"],
+		project_list=data["project_list"],
+		awards_list=data["awards_list"]
 	)
 
 	return latex_string
@@ -51,7 +51,7 @@ def read_yaml_and_write_latex(yaml_file, output_file):
 	- output_file: Path to save the generated LaTeX file.
 	"""
 	# Load the YAML data
-	with open(yaml_file, 'r') as file:
+	with open(yaml_file, "r") as file:
 		data = yaml.safe_load(file)
 
 
@@ -59,13 +59,13 @@ def read_yaml_and_write_latex(yaml_file, output_file):
 	latex_string = render_data_to_latex(data)
 
 	# Save the rendered LaTeX to a file
-	with open(output_file, 'w') as file:
+	with open(output_file, "w") as file:
 		file.write(latex_string)
 
 	return os.path.abspath(output_file)
 
 # Example usage
-# read_yaml_and_write_latex('data.yaml', 'resume.tex')
+# read_yaml_and_write_latex("data.yaml", "resume.tex")
 
 # Max size all uppercase with dot at end: 69
 # Max size all lowercase with dot at end: 103
@@ -84,8 +84,9 @@ def latex_escape(text):
 		return text
 
 	replacements = {
-		'&': r'\&',
-		'%': r'\%',
+		"&": r"\&",
+		"%": r"\%",
+		"#": r"\#",
 	}
 	for key, value in replacements.items():
 		text = text.replace(key, value)

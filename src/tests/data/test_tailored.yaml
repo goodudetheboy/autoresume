@@ -21,7 +21,18 @@ education_list:
 
 skills:
   languages:
-    [Python, Java, JavaScript, Typescript, SQL, Kotlin, Flutter, HTML/CSS]
+    [
+      Python,
+      Java,
+      JavaScript,
+      Typescript,
+      SQL,
+      Kotlin,
+      Flutter,
+      HTML/CSS,
+      C#,
+      C/C++,
+    ]
   tools:
     [
       Git,

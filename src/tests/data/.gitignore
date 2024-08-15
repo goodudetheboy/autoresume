@@ -3,5 +3,4 @@
 !.gitignore
 !test_*.tex
 !test_*.yaml
-
-
+!test_*.txt

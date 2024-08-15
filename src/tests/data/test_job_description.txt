@@ -1,0 +1,51 @@
+Roblox
+
+[Summer 2025] Software Engineer - Intern
+
+Every day, tens of millions of people come to Roblox to explore, create, play, learn, and connect with friends in 3D immersive digital experiences– all created by our global community of developers and creators.
+
+At Roblox, we’re building the tools and platform that empower our community to bring any experience that they can imagine to life. Our vision is to reimagine the way people come together, from anywhere in the world, and on any device. We’re on a mission to connect a billion people with optimism and civility, and looking for amazing talent to help us get there.
+
+A career at Roblox means you’ll be working to shape the future of human interaction, solving unique technical challenges at scale, and helping to create safer, more civil shared experiences for everyone.
+
+Roblox is ushering in the next generation of entertainment, allowing people to create and play together in immersive, user-generated worlds. We're the one and only fastest-growing entertainment platform that lets anyone teach themselves how to code and publish any experience imaginable — across any device — reaching over 100 million players across the globe every month!
+
+Roblox's platform is experiencing unprecedented growth, and as an intern, you will be at the forefront of this exciting journey! You'll be part of a world-class team that is revolutionizing the entertainment industry and empowering millions of players worldwide. During this 12-week internship, we'll support you as you tackle the hardest problems in tech today – distributed systems, real-time communication, 3D co-experience, extensive data processing, social networking, rendering, physics.
+
+For more information, you can visit our Software Engineer site page here.
+
+You Are:
+
+Pursuing an undergraduate/graduate degree in computer science, engineering or a related field.
+Working towards proficiency in one or more programming languages such as Go, Node.js, Ruby, Python, C++, Lua, Swift, C# or Java.
+Eager to work with industry-leading frameworks and libraries.
+Passionate about games, user generated content, and social networking.
+Passionate about learning and crafting great experiences as you work with your team to reach collective goals.
+You Will:
+
+Join a software engineering team and work closely with top-tier engineers, actively contributing to live projects.
+Consistently deliver strong work to production while actively engaging in the software development process, from coding to testing and deploying it to production.
+Take full responsibility for a project and see it through from beginning to end. This includes setting project objectives, collaborating with diverse teams, and presenting your work to Roblox's leadership.
+Work inclusively with Roblox's design, product, data, QA, and DevOps teams: collaboration is at the heart of Roblox's success.
+Gain valuable and marketable experience building one of the fastest growing software platforms
+Please note the Company may not be able to employ candidates who have United States work authorization related to certain U.S. visa categories, or support future H-1B sponsorship at this time.
+
+For roles that are based at our headquarters in San Mateo, CA: The starting base pay for this position is as shown below. The actual base pay is dependent upon a variety of job-related factors such as professional background, training, work experience, location, business needs and market demand. Therefore, in some circumstances, the actual hourly rate could fall outside of this expected range. This pay range is subject to change and may be modified in the future. Please note that not all benefits shown below are applicable to internship opportunities.
+
+Hourly Pay Range
+$60—$64 USD
+Roles that are based in our San Mateo, CA Headquarters are in-office Tuesday, Wednesday, and Thursday, with optional in-office on Monday and Friday (unless otherwise noted).
+
+You’ll Love:
+
+Industry-leading compensation package
+Excellent medical, dental, and vision coverage
+A rewarding 401k program
+Flexible vacation policy
+Roflex - Flexible and supportive work policy
+Roblox Admin badge for your avatar
+At Roblox HQ:
+Free catered lunches five times a week and several fully stocked kitchens with unlimited snacks
+Onsite fitness center and fitness program credit
+Annual CalTrain Go Pass
+Roblox provides equal employment opportunities to all employees and applicants for employment and prohibits discrimination and harassment of any type without regard to race, color, religion, age, sex, national origin, disability status, genetics, protected veteran status, sexual orientation, gender identity or expression, or any other characteristic protected by federal, state or local laws. Roblox also provides reasonable accommodations for all candidates during the interview process.
