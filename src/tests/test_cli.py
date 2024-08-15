@@ -34,12 +34,14 @@ class SystemInterfaceTest(unittest.TestCase):
 	
 	@patch("cli.tailor_resume_by_job_description")
 	@patch("cli.os.makedirs")
+	@patch("cli.render_data")
 	@patch("argparse.ArgumentParser.parse_args")
-	def test_main_with_pdf(
+	def test_main_with_both_pdf_and_latex(
 		self,
 		mock_parse_args: Mock,
+		mock_render_data: Mock,
 		mock_makedirs: Mock,
-		mock_tailor_resume_by_job_description: Mock
+		mock_tailor_resume_by_job_description: Mock,
 	):
 		with tempfile.TemporaryDirectory() as temp_output_dir:
 			mock_parse_args.return_value = argparse.Namespace(
@@ -57,3 +59,4 @@ class SystemInterfaceTest(unittest.TestCase):
 
 			mock_tailor_resume_by_job_description.assert_called_once_with({"name": "Vuong Ho"}, "PayPal - Software Engineering Intern")
 			self.assertEqual(mock_makedirs.call_count, 2)
+			mock_render_data.assert_called_once_with({"name": "Vuong Ho"})
