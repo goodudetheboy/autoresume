@@ -1,51 +1,53 @@
-Roblox
+NYC Summer Software Engineering Internship
+New York City
+Apply now
+We’re looking for students aspiring to be efficient, productive, and impactful software developers to join our Summer 2025 Engineering Internship Program. Jumpstart your career in a supportive environment that enables you to take on challenging work that directly impacts the business. 
 
-[Summer 2025] Software Engineer - Intern
+Our 12-week program is designed to expose you to all parts of software development in a growing tech company and prepare you for a full-time engineering career. Our 1:1 mentorship philosophy paired with our small team structure ensures you are being taught the best engineering practices and foundational principles that will help grow your career and allow you to excel quickly and have endless opportunities for impact! 
 
-Every day, tens of millions of people come to Roblox to explore, create, play, learn, and connect with friends in 3D immersive digital experiences– all created by our global community of developers and creators.
+As a member of our Engineering Program, you’ll join one of our many functional engineering teams as an individual contributor to develop new and well-written code, participate in and contribute to stand-ups, collaborate with team members on program and day-to-day work,, and increase efficiency amongst your team. Whether it’s working on one of our product teams and architecting product tours with React,  building out our foundational systems with our infrastructure teams, or redesigning our mobile apps with our mobile team, you will become an integral part of our growing organization. 
 
-At Roblox, we’re building the tools and platform that empower our community to bring any experience that they can imagine to life. Our vision is to reimagine the way people come together, from anywhere in the world, and on any device. We’re on a mission to connect a billion people with optimism and civility, and looking for amazing talent to help us get there.
+This role is based in our San Francisco office with an office-centric hybrid schedule. Along with most Asanas, you’ll work from this office in person on Mondays, Tuesdays, and Thursdays. Most Asanas have the option to work from home on Wednesdays and Fridays. If you're interviewing for this role, your Talent Acquisition Partner will share more about the in-office requirements. 
 
-A career at Roblox means you’ll be working to shape the future of human interaction, solving unique technical challenges at scale, and helping to create safer, more civil shared experiences for everyone.
+Learn more about our Engineering team: 
 
-Roblox is ushering in the next generation of entertainment, allowing people to create and play together in immersive, user-generated worlds. We're the one and only fastest-growing entertainment platform that lets anyone teach themselves how to code and publish any experience imaginable — across any device — reaching over 100 million players across the globe every month!
+The Asana Engineering Guide to Intern Mentorship 
+What our 2020 Interns Built! 
+How we build Inclusivity in the Workplace
+What you'll achieve
 
-Roblox's platform is experiencing unprecedented growth, and as an intern, you will be at the forefront of this exciting journey! You'll be part of a world-class team that is revolutionizing the entertainment industry and empowering millions of players worldwide. During this 12-week internship, we'll support you as you tackle the hardest problems in tech today – distributed systems, real-time communication, 3D co-experience, extensive data processing, social networking, rendering, physics.
+Learn what it’s like to work as a full-time software developer in a fast growing tech company.
+Make a real impact by contributing to a variety of projects, like building new features, testing infrastructure, implementing subtle interaction behaviors, or designing data models..
+Experience growth and development by being paired with a mentor who will support and guide you through opportunities to stretch and learn.
+Help us maintain a codebase and an award-winning culture, contributing to everything from the broadest strategic discussions to the specifics of updating a small app feature.
+Develop clean, beautiful code and leave it better than you found it.
+Feel supported by a growth-oriented team cheering you on as you take on new challenges
+Participate in Asana’s culture of transparency and distributed responsibility by providing peer feedback to members of your team.
+About you
 
-For more information, you can visit our Software Engineer site page here.
+Your anticipated graduation date is between December 2025 and July 2026
+A constant desire to learn and improve
+A foundational understanding of software development or computer science skills - we want to teach you more! 
+Passion for creating a user friendly experience, down to those little details that matter
+Appreciate productivity and care deeply about helping teams collaborate more effectively and efficiently, including your own
+Excited to be a part of an inclusive culture where we encourage everyone to bring their whole selves to work
+What we’ll offer
 
-You Are:
+Our comprehensive compensation package plays a big part in how we recognize you for the impact you have on our path to achieving our mission. We believe that compensation should be reflective of the value you create relative to the market value of your role. To ensure pay is fair and not impacted by biases, we're committed to looking at market value which is why we check ourselves and conduct a yearly pay equity audit. 
 
-Pursuing an undergraduate/graduate degree in computer science, engineering or a related field.
-Working towards proficiency in one or more programming languages such as Go, Node.js, Ruby, Python, C++, Lua, Swift, C# or Java.
-Eager to work with industry-leading frameworks and libraries.
-Passionate about games, user generated content, and social networking.
-Passionate about learning and crafting great experiences as you work with your team to reach collective goals.
-You Will:
+For this role, the estimated pay rate is $64.75 per hour.  The actual rate will vary based on various factors, including market and individual qualifications objectively assessed during the interview process. The listed pay rate above is a guideline, and the pay rate for this role may be modified.
 
-Join a software engineering team and work closely with top-tier engineers, actively contributing to live projects.
-Consistently deliver strong work to production while actively engaging in the software development process, from coding to testing and deploying it to production.
-Take full responsibility for a project and see it through from beginning to end. This includes setting project objectives, collaborating with diverse teams, and presenting your work to Roblox's leadership.
-Work inclusively with Roblox's design, product, data, QA, and DevOps teams: collaboration is at the heart of Roblox's success.
-Gain valuable and marketable experience building one of the fastest growing software platforms
-Please note the Company may not be able to employ candidates who have United States work authorization related to certain U.S. visa categories, or support future H-1B sponsorship at this time.
+We strive to provide equitable and competitive benefit packages that support our employees worldwide and includes:
 
-For roles that are based at our headquarters in San Mateo, CA: The starting base pay for this position is as shown below. The actual base pay is dependent upon a variety of job-related factors such as professional background, training, work experience, location, business needs and market demand. Therefore, in some circumstances, the actual hourly rate could fall outside of this expected range. This pay range is subject to change and may be modified in the future. Please note that not all benefits shown below are applicable to internship opportunities.
+Mental health, wellness & fitness benefits
+Career coaching & support 
+In-office culinary options to cater to your dietary preferences 
+These are just some of the benefits we offer, and benefits may vary based on role, country, and local regulations. If you're interviewing for this role, speak with your Talent Acquisition Partner to learn more about the total compensation and benefits for this role.
 
-Hourly Pay Range
-$60—$64 USD
-Roles that are based in our San Mateo, CA Headquarters are in-office Tuesday, Wednesday, and Thursday, with optional in-office on Monday and Friday (unless otherwise noted).
+About us
 
-You’ll Love:
+Asana helps teams orchestrate their work, from small projects to strategic initiatives. Millions of teams around the world rely on Asana to achieve their most important goals, faster. Asana has been named a Top 10 Best Workplace for 5 years in a row, is Fortune's #1 Best Workplace in the Bay Area, and one of Glassdoor’s and Inc.’s Best Places to Work. After spending more than a year physically distanced, Team Asana is safely and mindfully returning to in-person collaboration, incorporating flexibility that adds hybrid elements to our office-centric culture. With 11+ offices all over the world, we are always looking for individuals who care about building technology that drives positive change in the world and a culture where everyone feels that they belong. 
 
-Industry-leading compensation package
-Excellent medical, dental, and vision coverage
-A rewarding 401k program
-Flexible vacation policy
-Roflex - Flexible and supportive work policy
-Roblox Admin badge for your avatar
-At Roblox HQ:
-Free catered lunches five times a week and several fully stocked kitchens with unlimited snacks
-Onsite fitness center and fitness program credit
-Annual CalTrain Go Pass
-Roblox provides equal employment opportunities to all employees and applicants for employment and prohibits discrimination and harassment of any type without regard to race, color, religion, age, sex, national origin, disability status, genetics, protected veteran status, sexual orientation, gender identity or expression, or any other characteristic protected by federal, state or local laws. Roblox also provides reasonable accommodations for all candidates during the interview process.
+We believe in supporting people to do their best work and thrive, and building a diverse, equitable, and inclusive company is core to our mission. Our goal is to ensure that Asana upholds an inclusive environment where all people feel that they are equally respected and valued, whether they are applying for an open position or working at the company. We provide equal employment opportunities to all applicants without regard to race, color, religion, age, sex, national origin, disability status, genetics, protected veteran status, sexual orientation, gender identity or expression, or any other characteristic protected by law.
+
+#internship

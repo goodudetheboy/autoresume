@@ -51,16 +51,16 @@ def main():
 		output_pdf_path=args.output_dir_pdf if args.pdf else None
 	)
 
-	# Print keywords
-	print("Keywords detected in your job description: ")
-	for keyword in analysis["keywords"]:
-		print(f"\t- {keyword}")
-	
 	# Print resume in YAML
 	print()
 	print("Here is your resume in YAML")
 	print(yaml.safe_dump(analysis["resume"]))
 
+	# Print keywords
+	print("Keywords detected in your job description: ")
+	for keyword in analysis["keywords"]:
+		print(f"\t- {keyword}")
+	
 	if args.tex:
 		output_latex_path = os.path.join(args.output_dir_tex, f"{args.resume_name}.tex" )
 		print(f"Your resume has been saved into a LaTeX file at {os.path.abspath(output_latex_path)}")

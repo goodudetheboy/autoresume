@@ -8,11 +8,11 @@ from cli import load_yaml_file, load_job_description, main
 
 class SystemInterfaceTest(unittest.TestCase):
 	def setUp(self):
-		with tempfile.NamedTemporaryFile(dir=os.getcwd(), delete=False, suffix=".yaml") as temp_file:
+		with tempfile.NamedTemporaryFile(delete=False, suffix=".yaml") as temp_file:
 			temp_file.write("name: Vuong Ho".encode('utf-8'))
 			self.temp_resume_yaml = temp_file.name
 
-		with tempfile.NamedTemporaryFile(dir=os.getcwd(), delete=False, suffix=".txt") as temp_file:
+		with tempfile.NamedTemporaryFile(delete=False, suffix=".txt") as temp_file:
 			temp_file.write("PayPal - Software Engineering Intern".encode('utf-8'))
 			self.temp_job_description = temp_file.name
 
@@ -51,6 +51,6 @@ class SystemInterfaceTest(unittest.TestCase):
 			main()
 			output_tex_dir = os.path.join(temp_output_dir, "tailored_resume.tex")
 			output_pdf_dir = os.path.join(temp_output_dir, "tailored_resume.pdf")
-			print(output_tex_dir, output_pdf_dir)
+
 			self.assertTrue(os.path.exists(output_tex_dir))
 			self.assertTrue(os.path.exists(output_pdf_dir))
