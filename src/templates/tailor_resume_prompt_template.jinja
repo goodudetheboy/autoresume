@@ -1,0 +1,20 @@
+You will be given a resume of the following yaml format {{ resume_yaml_template }} and a job description from a company.
+
+Resume:
+{{ resume }}
+
+Job description:
+{{ job_description }}
+
+Tailor the resume using  the content of the resume to the job description. Here are the requirements:
+- Make sure all the important keywords are present in the resume
+- Make sure to include at least 3 experiences in the tailored resume
+- Each experience/project can have at most 3 bullet points (or 'details' field in the yaml). Make sure it is also tailored to the job description, and be as detailed and tailored as possible using XYZ style and quantified as much as possible. Each bullet point must be between 100 to 110 characters.
+- DO NOT use first-person in the resume. Keep it professional
+- Order the technical skills in order of importance in the job description. You can add one or two from the job description even if it's not in the resume, but make sure to list all of the available technical skills in the raw resume
+
+Think before tailoring and return a json response of the following format:
+{
+  "keywords": <list of important keywords in the job description. Make sure to incorporate these keywords in the resume also>
+  "resume": <the tailored resume string formatted in json closely following the above resume template yaml format>
+}

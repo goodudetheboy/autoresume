@@ -12,4 +12,6 @@ class TailorResumeTest(unittest.TestCase):
 
 		result = tailor_resume_by_job_description(data, jd)
 
+		print(result["resume"])
+
 		self.assertIsNotNone(result)
