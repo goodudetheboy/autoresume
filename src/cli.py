@@ -1,4 +1,5 @@
 import argparse
+import subprocess
 import yaml
 import os
 
@@ -18,6 +19,17 @@ def load_job_description(txt_path):
 	with open(txt_path, "r") as file:
 		return file.read()
 
+def check_pdflatex_installed():
+	try:
+		# Attempt to run the 'pdflatex' command with the version flag to check if it's installed
+		result = subprocess.run(['pdflatex', '--version'], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+		# Check if the command was successful (exit code 0)
+		return result.returncode == 0
+	except FileNotFoundError:
+			# This will catch the case where 'pdflatex' is not found in the system PATH
+			return False
+
 def main():
 	parser = argparse.ArgumentParser(description="Tailor your resume to a job description.")
 	parser.add_argument("resume", type=str, help="Path to the resume YAML file.")
@@ -34,14 +46,19 @@ def main():
 	resume_data = load_yaml_file(args.resume)
 	job_description = load_job_description(args.job_description)
 
-	# Process the resume with the tailor module
-	analysis = tailor_resume_by_job_description(resume_data, job_description)
-
 	# Ensure the output directories exist
 	if args.pdf:
-		os.makedirs(args.output_dir_pdf, exist_ok=True)
+		if not check_pdflatex_installed():
+			print("Unfortunately you can't compile .tex files on this system, please install pdflatex.")
+			print("You can instead go to https://overleaf.com to compile the generated LaTeX resume file.")
+			args.pdf = False
+		else:
+			os.makedirs(args.output_dir_pdf, exist_ok=True)
 	if args.tex:
 		os.makedirs(args.output_dir_tex, exist_ok=True)
+
+	# Process the resume with the tailor module
+	analysis = tailor_resume_by_job_description(resume_data, job_description)
 
 	# Handle LaTeX rendering and PDF generation
 	render_data(
