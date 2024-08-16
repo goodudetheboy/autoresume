@@ -10,6 +10,7 @@ linkedin:
 github:
   - link: <your GitHub profile>
   - alias: <your GitHub alias>
+
 education_list:
   - institution: <your institution>
     graduation: <your expected graduation date>

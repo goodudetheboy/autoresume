@@ -1,9 +1,15 @@
 name: Vuong Ho
 phone: "(585) 606-0796"
 email: "vuong@vuongho.me"
-website: "https://vuongho.me/"
-linkedin: "https://linkedin.com/in/vuongho/"
-github: "https://github.com/goodudetheboy/"
+website:
+  link: "https://vuongho.me/"
+  alias: "vuongho.me"
+linkedin:
+  link: "https://linkedin.com/in/vuongho/"
+  alias: "in/vuongho"
+github:
+  link: "https://github.com/goodudetheboy/"
+  alias: "goodudetheboy"
 
 education_list:
   - institution: "University of Rochester"
@@ -79,7 +85,7 @@ experience_list:
     location: "Rochester, NY"
     details:
       - "Chosen as one of the top 2% out of 2,500 applicants for the elite Meta & MLH Production Engineering Fellowship."
-      - "Developed a Flask project from scratch and deployed it on cloud servers with Nginx reverse proxy and SSL certificates."
+      - "Developed a Flask project from scratch deployed it on cloud servers with Nginx reverse proxy and SSL certificates."
       - "Leveraged GitHub Actions for CI/CD, test-driven development, and Docker to achieve 90% faster deployment times."
 
   - company: "Vietnam Tech Society"
@@ -96,7 +102,7 @@ experience_list:
     role: "Software Engineer Intern"
     location: "Rochester, NY"
     details:
-      - "Engineered a key feature for OpenStreetMap’s Vespucci Android app that efficiently evaluates user input opening hours."
+      - "Engineered a key feature for OpenStreetMap’s Vespucci Android app that efficiently evaluates input opening hours."
       - "Implemented an evaluator that processes opening hours of 140,000+ locations with Java, Gradle, and Github Actions."
       - "Supported a grammar system of 80+ rules, expanding coverage from 10% to approximately 100% of the specification."
 
@@ -105,7 +111,7 @@ experience_list:
     role: "Teaching Assistant"
     location: "Rochester, NY"
     details:
-      - "Courses: Artificial Intelligence, Computation & Formal System, Programming Language Design, Discrete Mathematics."
+      - "Courses: Artificial Intelligence, Computation & Formal System, Programming Language, Discrete Mathematics."
       - "Facilitated weekly study sessions for 30 students, focusing on advanced computer science and mathematics concepts."
 
 project_list:
@@ -114,8 +120,8 @@ project_list:
     description: "Hyper-personalized trip planning with TikTok videos."
     duration: "Jun – Aug 2024"
     details:
-      - "Led a team of 5 developers to create a hyper-personalized trip planning platform tailored to users’ travel TikTok videos."
-      - "Architected and deployed a scalable AWS microservices backend with a Vite frontend, achieving 99.9% uptime and global deployment on Firebase, 40% faster load times, supported by a Github Actions CI/CD pipeline with 90% test coverage."
+      - "Led a team of 5 to create a hyper-personalized trip planning platform tailored to users travel TikTok videos."
+      - "Architected and deployed a scalable AWS microservices backend with a Vite frontend, achieving 99.9 uptime and global deployment on Firebase, 40% faster load times, supported by a Github Actions CI/CD pipeline with 90 test coverage."
       - "Received 150+ likes and votes, the most liked project out of 219 teams, in the TikTok TechJam 2024 hackathon."
 
   - name: "EduVision"
@@ -123,8 +129,8 @@ project_list:
     description: "Eye-tracking powered classroom assistance system."
     duration: "Mar – May 2024"
     details:
-      - "Led a team of 3 in developing a classroom assistance system that utilizes real-time eye-tracking to detect possible confusing topics using students’ gaze heatmap and provide classroom statistics to assist instructors with their teaching."
-      - "Won Best Education Award out of 43 teams at YHack 2024 hackathon hosted at Yale University."
+      - "Led a team of 3 in developing a classroom assistance system that utilizes real-time eye-tracking to detect possible confusing topics using students’ gaze heatmap and provide classroom statistics to instructors with their teaching."
+      - "Won Best Education Award out of 43 teams at YHack 2024 hackathon hosted Yale University."
 
 awards_list:
   - name: "YHack 2024 Hackathon at Yale University"
