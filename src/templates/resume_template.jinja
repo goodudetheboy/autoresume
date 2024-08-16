@@ -109,9 +109,9 @@
   \small \raisebox{-0.1\height}
   \faPhone\ {{ phone }}
   ~ \href{mailto:{{ email }}}{\raisebox{-0.2\height} \faEnvelope\ \underline{ {{ email }} }}
-  ~ \href{https://{{ website }}}{\raisebox{-0.2\height} \faHome\ \underline{ {{ website }} }}
-  ~ \href{https://linkedin.com/in/{{ linkedin }}}{\raisebox{-0.2\height} \faLinkedin\ \underline{in/{{ linkedin }}}}
-  ~ \href{https://github.com/{{ github }}}{\raisebox{-0.2\height} \faGithub\ \underline{ {{ github }} }}
+  {% if website %} ~ \href{ {{website.link}} }{\raisebox{-0.2\height} \faHome\ \underline{ {{ website.alias }} }} {% endif %}
+  {% if linkedin %} ~ \href{ {{linkedin.link}} }{\raisebox{-0.2\height} \faLinkedin\ \underline{ {{ linkedin.alias }} }} {% endif %}
+  {% if github %} ~ \href{https://github.com/{{ github }}}{\raisebox{-0.2\height} \faGithub\ \underline{ {{ github.alias }} }} {% endif %}
   \vspace{-8pt}
 \end{center}
 
@@ -130,12 +130,11 @@
 \section{Technical Skills}
  \begin{itemize}[leftmargin=0.15in, label={}]
     \small{\item{
-     \textbf{Languages}{: {{ skills.languages | join(", ") }}} \\
-     \textbf{Developer Tools}{: {{ skills.tools | join(", ") }}} \\
-     \textbf{Frameworks}{: {{ skills.frameworks | join(", ") }}} \\
-     \textbf{Collaborative Methodologies}{: {{ skills.methodologies | join(", ") }}} \\
+      {% for skill in skills %}
+        \textbf{ {{skill.section_name}} }{: {{ skill.details | join(", ") }}} \\
+      {% endfor %}
     }}
- \end{itemize}
+ \end{itemize} 
  \vspace{-16pt}
 
 %-----------EXPERIENCE-----------
@@ -160,7 +159,7 @@
     \resumeSubHeadingListStart
     {% for project in project_list %}
       \resumeProjectHeading
-      {\href{ {{ project.link }} }{\textbf{ {{- project.name -}} }} $|$ \emph{ {{ project.description }} }}{ {{ project.duration }} }
+      {\href{ {{ project.link }} }{\textbf{ {{- project.name -}} }} $|$ \emph{ {{ project.summary }} }}{ {{ project.duration }} }
       \resumeItemListStart
       {% for item in project.details %}
         \resumeItem{ {{ item }} }

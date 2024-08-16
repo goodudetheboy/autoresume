@@ -39,7 +39,7 @@ class SystemInterfaceTest(unittest.TestCase):
 	):
 		with tempfile.TemporaryDirectory(dir=os.getcwd()) as temp_output_dir:
 			mock_parse_args.return_value = argparse.Namespace(
-				resume="./tests/data/test_raw.yaml",
+				resume="./tests/data/test_resume.yaml",
 				job_description="./tests/data/test_job_description.txt",
 				resume_name="tailored_resume",
 				pdf=True,

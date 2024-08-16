@@ -38,25 +38,19 @@ This CLI application tailors a YAML-formatted resume to a specific job descripti
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/goodudetheboy/autoresume.git
-   cd resume-tailor-cli
+   cd autoresume
    ```
 
 2. **Install Required Python Packages**:
    ```bash
-   pip install PyYAML
+   python -m venv venv
+   source venv/bin/activate
    ```
 
 3. **Ensure LaTeX Distribution is Installed**:
    - Install [TeX Live](https://www.tug.org/texlive/) or [MiKTeX](https://miktex.org/), depending on your operating system.
 
 ## Usage
-
-### Prerequisites
-
-You have to first change directory into `src` directory first. Do
-```bash
-cd src
-```
 
 ### Basic Command Structure
 
