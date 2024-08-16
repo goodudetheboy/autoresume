@@ -134,7 +134,7 @@
         \textbf{ {{skill.section_name}} }{: {{ skill.details | join(", ") }}} \\
       {% endfor %}
     }}
- \end{itemize}
+ \end{itemize} 
  \vspace{-16pt}
 
 %-----------EXPERIENCE-----------
@@ -159,7 +159,7 @@
     \resumeSubHeadingListStart
     {% for project in project_list %}
       \resumeProjectHeading
-      {\href{ {{ project.link }} }{\textbf{ {{- project.name -}} }} $|$ \emph{ {{ project.description }} }}{ {{ project.duration }} }
+      {\href{ {{ project.link }} }{\textbf{ {{- project.name -}} }} $|$ \emph{ {{ project.summary }} }}{ {{ project.duration }} }
       \resumeItemListStart
       {% for item in project.details %}
         \resumeItem{ {{ item }} }

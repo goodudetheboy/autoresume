@@ -1,0 +1,223 @@
+name: Vincent Ho
+phone: "(585) 606-0796"
+email: "vincent@vuongho.me"
+website:
+  link: "https://vuongho.me/"
+  alias: "vuongho.me"
+linkedin:
+  link: "https://linkedin.com/in/vuongho/"
+  alias: "in/vuongho"
+github:
+  link: "https://github.com/goodudetheboy/"
+  alias: "goodudetheboy"
+
+education_list:
+  - institution: "University of Rochester"
+    graduation: "Expected Dec 2025"
+    degree: "MS in Computer Science"
+    extra_info: ""
+  - institution: "University of Rochester"
+    graduation: "May 2024"
+    degree: "BS in Computer Science, BS in Applied Mathematics, Operations Research Certificate"
+    extra_info: "GPA: 3.79/4.00"
+  - institution: "CodePath"
+    graduation: "May – Aug 2022"
+    degree: "Advanced Software Engineering Certificate"
+    extra_info: "Remote"
+
+skills:
+  - section_name: "Languages"
+    details:
+      [
+        "Python",
+        "Java",
+        "JavaScript",
+        "Typescript",
+        "Flutter",
+        "Kotlin",
+        "HTML/CSS",
+        "SQL",
+      ]
+  - section_name: "Developer Tools"
+    details:
+      [
+        "Gradle",
+        "Node.js",
+        "MongoDB",
+        "AWS",
+        "Google Cloud Platform",
+        "React.js",
+        "Jest",
+        "JavaCC",
+        "Linux",
+        "Docker",
+      ]
+  - section_name: "Frameworks"
+    details:
+      [
+        "VS Code",
+        "Git",
+        "ChatGPT",
+        "Github Actions",
+        "Android Studio",
+        "SonarCloud",
+        "Elasticsearch",
+        "Bash",
+      ]
+  - section_name: "Collaborative Methodologies"
+    details:
+      [
+        "Agile",
+        "Scrum",
+        "DevOps",
+        "Test-Driven Development",
+        "Slack",
+        "Github Projects",
+        "Jira",
+      ]
+
+experience_list:
+  - company: "Meta & Major League Hacking"
+    duration: "Jun 2024 -- Present"
+    role: "Site Reliability Engineering Fellow"
+    location: "Rochester, NY"
+    details:
+      - "Chosen as one of the top 2% out of 2,500 applicants for the elite Meta & MLH Production Engineering Fellowship."
+      - "Developed a Flask project from scratch and deployed it on cloud servers with Nginx reverse proxy and SSL certificates."
+      - "Leveraged GitHub Actions for CI/CD, test-driven development, and Docker to achieve 90% faster deployment times."
+
+  - company: "Rochester Human-Computer Interaction Lab"
+    duration: "Mar 2024 -- Present"
+    role: "Research Assistant"
+    location: "Rochester, NY"
+    details:
+      - "Currently researching an AI-powered device to assist deaf or hard-of-hearing children in early language development."
+      - "Migrated the current system to AWS, enhancing ease of use, which resulted in an 80% positive feedback in a recent study."
+
+  - company: "Ho Chi Minh City Information Security Services Company (Hissc)"
+    duration: "May -- Jul 2023"
+    role: "Machine Learning Engineer Intern"
+    location: "Ho Chi Minh City, Vietnam"
+    details:
+      - "Leveraged Elastic ML to deploy 20 ML-based security rules for enhancing threat detection for the city's web servers."
+      - "Managed a Fleet of 11 Elastic Agents to collect and process system logs of 5 Windows and Linux public infrastructures."
+      - "Conducted data analysis to optimize performance of ML models, resulting in a 30% increase in detection accuracy."
+
+  - company: "Vietnam Tech Society"
+    duration: "Jun 2022 -- Jan 2023"
+    role: "Software Engineer Intern"
+    location: "Rochester, NY"
+    details:
+      - "Delivered a robust TypeScript and Firebase project that enables users to configure and filter appointment availability."
+      - "Deployed the 'Filter by Availability' feature with 100% test coverage, resulting in a 90% improvement in usability."
+      - "Reduced server cost by 25% by optimizing backend Firebase functions to operate dynamically rather than periodically."
+
+  - company: "Yolo Shadow"
+    duration: "Sep 2021 -- Jan 2022"
+    role: "Software Engineer Intern"
+    location: "Rochester, NY"
+    details:
+      - "Developed a dashboard to support a network of 30+ partners to manage their event page using React and Mongoose."
+      - "Optimized the REST APIs backend, resulting in a 20% reduction in response times even during peak traffic periods."
+      - "Successfully resolved 8 database bugs and added 5+ comprehensive test cases to ensure the reliability of the system."
+
+  - company: "Google Summer of Code 2021"
+    duration: "May -- Aug 2021"
+    role: "Software Engineer Intern"
+    location: "Rochester, NY"
+    details:
+      - "Engineered a key feature for OpenStreetMap's Vespucci Android app that efficiently evaluates user input opening hours."
+      - "Implemented an evaluator that processes opening hours of 140,000+ locations with Java, Gradle, and Github Actions."
+      - "Supported a grammar system of 80+ rules, expanding coverage from 10% to approximately 100% of the specification."
+
+  - company: "University of Rochester"
+    duration: "Sep 2021 -- May 2024"
+    role: "Teaching Assistant"
+    location: "Rochester, NY"
+    details:
+      - "Courses: Artificial Intelligence, Computation & Formal System, Programming Language Design, Discrete Mathematics."
+      - "Facilitated weekly study sessions for 30 students, focusing on advanced computer science and mathematics concepts."
+
+project_list:
+  - name: "SwipeAndFly"
+    link: "https://devpost.com/software/vietrochack"
+    summary: "hyper-personalized trip planning with TikTok videos"
+    duration: "Jun -- Aug 2024"
+    details:
+      - "Led a team of 5 developers to create a hyper-personalized trip planning platform tailored to users' travel TikTok videos."
+      - "Architected and deployed a scalable AWS microservices backend with a Vite frontend, achieving 99.9% uptime and global deployment on Firebase, 40% faster load times, supported by a Github Actions CI/CD pipeline with 90% test coverage."
+      - "Received 150+ likes and votes, the most liked project out of 219 teams, in the TikTok TechJam 2024 hackathon."
+
+  - name: "EduVision"
+    link: "https://devpost.com/software/eduvision-y9fw0g"
+    summary: "eye-tracking powered classroom assistance system"
+    duration: "Mar -- May 2024"
+    details:
+      - "Led a team of 3 in developing a classroom assistance system that utilizes real-time eye-tracking to detect possible confusing topics using students' gaze heatmap and provide classroom statistics to assist instructors with their teaching."
+      - "Won Best Education Award out of 43 teams at YHack 2024 hackathon hosted at Yale University."
+
+  - name: "Convenient Essay"
+    link: "https://essay.cvhtechnology.com/"
+    summary: "GPT-3.5-powered Essay-as-a-Service web app"
+    duration: "May -- Oct 2023"
+    details:
+      - "Led the development of an automated essay generation website using React and Firebase with GPT-3.5 backend."
+      - "Managed 3 serverless microservices on Google Cloud Functions, with a stress-tested concurrent user capacity of 10K."
+
+  - name: "Convenient Hairstyle"
+    link: "https://hairstyle.cvhtechnology.com/"
+    summary: "hairstyle generator website using a custom DALL-E 2 model"
+    duration: "Apr -- Jul 2023"
+    details:
+      - "Developed a responsive website with React to let users create hairstyles using prompt, supporting ~50 known hairstyles."
+      - "Implemented the HairCLIP API provided by Replicate to enable users to change their hairstyle by using their pictures."
+
+  - name: "ConDoc"
+    link: "https://play.google.com/store/apps/details?id=com.cvhtechnology.condoc"
+    summary: "hospital appointment mobile application"
+    duration: "Dec 2022 -- Mar 2023"
+    details:
+      - "Drove the development of an app allowing patients to schedule appointments in advance at participating hospitals."
+      - "Orchestrated a 3-person team to successfully deliver a multi-component system comprising a user-facing Flutter mobile app, a React appointment management web app, and Firebase Node backend, supporting up to ~4K concurrent users."
+
+  - name: "Youtube Live Translator"
+    link: "https://github.com/goodudetheboy/youtube-live-translator.js"
+    summary: "a Youtube plugin that gives realtime translation of livestreams"
+    duration: "May -- Sep 2021"
+    details:
+      - "Built an Electron.js program that utilizes Wit.ai API to translate Youtube livestreams from 50 languages to English."
+      - "Created a sound filter to smooth out audio data converted with SoX for ease of translation and more readable subtitles."
+
+  - name: "WorldHolidayDates"
+    link: "https://github.com/goodudetheboy/WorldHolidayDates"
+    summary: "a Java library to fetch holiday dates from 168 countries"
+    duration: "May -- Aug 2021"
+    details:
+      - "Integrated support for 6 different types of calendars, including accurate calculation of astronomical and special duration."
+      - "Implemented a complex grammar with JavaCC and Gson to support a wide range of holidays from around the world."
+
+  - name: "SayacchiBot"
+    link: "https://github.com/goodudetheboy/SayacchiBot"
+    summary: "a Discord.js bot with advanced scraping algorithm"
+    duration: "May -- Aug 2021"
+    details:
+      - "Engineered a custom scraper with the Puppeteer library to algorithmically find the most related images from a keyword."
+      - "Added database with Mongoose and MongoDB Atlas to store and retrieve bot-related data to support its operation."
+      - "Deployed to and maintained on Heroku and Repl.it with the testing framework Jest for 6+ months with regular upduration."
+
+awards_list:
+  - name: "YHack 2024 Hackathon at Yale University"
+    description: "Best Education Award"
+    date: "Mar 2024"
+
+  - name: "DandyHacks’23 Hackathon at University of Rochester"
+    description: "Most Dandy Hack Award"
+    date: "Nov 2023"
+
+  - name: "ICPC Northeast North America Regional Contest 2023"
+    description: "Rank 36/93"
+    date: "Oct 2023"
+
+  - name: "ICPC Northeast North America Regional Contest 2022"
+    description: "Rank 15/84 — Bronze Medal"
+    date: "Feb 2023"

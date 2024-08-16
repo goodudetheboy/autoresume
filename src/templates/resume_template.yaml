@@ -24,11 +24,6 @@ skills:
 
   # more skills here
 
-  # languages: [<programming languages you know>]
-  # tools: [<tools and software you use>]
-  # frameworks: [<frameworks and platforms you work with>]
-  # methodologies: [<methodologies you follow or are familiar with>]
-
 experience_list:
   - company: <your company or organization>
     duration: <your duration at the company>
@@ -42,7 +37,7 @@ experience_list:
 project_list:
   - name: <project name>
     link: <project link>
-    description: <brief description of the project>
+    summary: <brief summary of the project>
     duration: <project duration>
     details:
       - <key achievement or responsibility>
