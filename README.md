@@ -51,10 +51,17 @@ This CLI application tailors a YAML-formatted resume to a specific job descripti
 
 ## Usage
 
+### Prerequisites
+
+You have to first change directory into `src` directory first. Do
+```bash
+cd src
+```
+
 ### Basic Command Structure
 
 ```bash
-python app.py [OPTIONS] RESUME_PATH JOB_DESCRIPTION_PATH
+python cli.py [OPTIONS] RESUME_PATH JOB_DESCRIPTION_PATH
 ```
 
 - `RESUME_PATH`: Path to your resume YAML file.
@@ -65,7 +72,7 @@ python app.py [OPTIONS] RESUME_PATH JOB_DESCRIPTION_PATH
 To generate a tailored resume in PDF format:
 
 ```bash
-python app.py RESUME_PATH JOB_DESCRIPTION_PATH --pdf --output-dir-pdf OUTPUT_PDF_DIRECTORY
+python cli.py RESUME_PATH JOB_DESCRIPTION_PATH --pdf --output-dir-pdf OUTPUT_PDF_DIRECTORY
 ```
 
 - `--pdf`: Flag to generate PDF output.
@@ -76,7 +83,7 @@ python app.py RESUME_PATH JOB_DESCRIPTION_PATH --pdf --output-dir-pdf OUTPUT_PDF
 To generate a tailored resume in LaTeX (`.tex`) format:
 
 ```bash
-python app.py RESUME_PATH JOB_DESCRIPTION_PATH --tex --output-dir-tex OUTPUT_TEX_DIRECTORY
+python cli.py RESUME_PATH JOB_DESCRIPTION_PATH --tex --output-dir-tex OUTPUT_TEX_DIRECTORY
 ```
 
 - `--tex`: Flag to generate LaTeX (`.tex`) output.
@@ -87,34 +94,34 @@ python app.py RESUME_PATH JOB_DESCRIPTION_PATH --tex --output-dir-tex OUTPUT_TEX
 To generate both PDF and LaTeX outputs simultaneously:
 
 ```bash
-python app.py RESUME_PATH JOB_DESCRIPTION_PATH --pdf --output-dir-pdf OUTPUT_PDF_DIRECTORY --tex --output-dir-tex OUTPUT_TEX_DIRECTORY
+python cli.py RESUME_PATH JOB_DESCRIPTION_PATH --pdf --output-dir-pdf OUTPUT_PDF_DIRECTORY --tex --output-dir-tex OUTPUT_TEX_DIRECTORY
 ```
 
 ## Examples
 
 1. **Generate Only PDF**:
    ```bash
-   python app.py resume.yaml job_description.txt --pdf --output-dir-pdf ./output/pdf
+   python cli.py resume.yaml job_description.txt --pdf --output-dir-pdf ./output/pdf
    ```
 
 2. **Generate Only LaTeX (`.tex`) File**:
    ```bash
-   python app.py resume.yaml job_description.txt --tex --output-dir-tex ./output/tex
+   python cli.py resume.yaml job_description.txt --tex --output-dir-tex ./output/tex
    ```
 
 3. **Generate Both PDF and LaTeX Outputs in Default Directory**:
    ```bash
-   python app.py resume.yaml job_description.txt --pdf --tex
+   python cli.py resume.yaml job_description.txt --pdf --tex
    ```
 
 4. **Generate Both PDF and LaTeX Outputs in Specified Directories**:
    ```bash
-   python app.py resume.yaml job_description.txt --pdf --output-dir-pdf ./pdf_output --tex --output-dir-tex ./tex_output
+   python cli.py resume.yaml job_description.txt --pdf --output-dir-pdf ./pdf_output --tex --output-dir-tex ./tex_output
    ```
 
 ## Modules Description
 
-- **`app.py`**: The main CLI application that parses arguments, processes inputs, and coordinates the tailoring and rendering processes.
+- **`cli.py`**: The main CLI application that parses arguments, processes inputs, and coordinates the tailoring and rendering processes.
 
 - **`tailor` Module**:
   - **Function**: Processes the YAML resume and job description to tailor the resume content.
