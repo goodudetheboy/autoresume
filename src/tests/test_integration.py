@@ -5,7 +5,7 @@ from content.render import *
 
 class IntegrationTest(unittest.TestCase):
 	def test_tailor_and_render_resume(self):
-		with open("./tests/data/test_raw.yaml", 'r') as file:
+		with open("./tests/data/test_resume.yaml", 'r') as file:
 			data = yaml.safe_load(file)
 
 		with open("./tests/data/test_job_description.txt", "r") as file:

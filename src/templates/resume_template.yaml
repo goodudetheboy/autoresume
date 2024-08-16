@@ -1,10 +1,15 @@
 name: <your name>
 phone: <your phone number>
 email: <your email>
-website: <your website>
-linkedin: <your LinkedIn profile>
-github: <your GitHub profile>
-
+website:
+  - link: <your website>
+  - alias: <your website alias>
+linkedin:
+  - link: <your LinkedIn profile>
+  - alias: <your LinkedIn alias>
+github:
+  - link: <your GitHub profile>
+  - alias: <your GitHub alias>
 education_list:
   - institution: <your institution>
     graduation: <your expected graduation date>
@@ -13,10 +18,15 @@ education_list:
   # more education entries here
 
 skills:
-  languages: [<programming languages you know>]
-  tools: [<tools and software you use>]
-  frameworks: [<frameworks and platforms you work with>]
-  methodologies: [<methodologies you follow or are familiar with>]
+  - section_name: <name of your skill section here, can include languages, tools, frameworks, collaborative methodologies...>
+    details: [<your desired skills here>]
+
+  # more skills here
+
+  # languages: [<programming languages you know>]
+  # tools: [<tools and software you use>]
+  # frameworks: [<frameworks and platforms you work with>]
+  # methodologies: [<methodologies you follow or are familiar with>]
 
 experience_list:
   - company: <your company or organization>

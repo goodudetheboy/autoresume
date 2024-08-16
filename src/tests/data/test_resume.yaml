@@ -20,51 +20,57 @@ education_list:
     extra_info: "Remote"
 
 skills:
-  languages:
-    [
-      "Python",
-      "Java",
-      "JavaScript",
-      "Typescript",
-      "Flutter",
-      "Kotlin",
-      "HTML/CSS",
-      "SQL",
-    ]
-  tools:
-    [
-      "VS Code",
-      "Git",
-      "ChatGPT",
-      "Github Actions",
-      "Android Studio",
-      "SonarCloud",
-      "Elasticsearch",
-      "Bash",
-    ]
-  frameworks:
-    [
-      "Gradle",
-      "Node.js",
-      "MongoDB",
-      "AWS",
-      "Google Cloud Platform",
-      "React.js",
-      "Jest",
-      "JavaCC",
-      "Linux",
-      "Docker",
-    ]
-  methodologies:
-    [
-      "Agile",
-      "Scrum",
-      "DevOps",
-      "Test-Driven Development",
-      "Slack",
-      "Github Projects",
-      "Jira",
-    ]
+  - section_name: "Languages"
+    details:
+      [
+        "Python",
+        "Java",
+        "JavaScript",
+        "Typescript",
+        "Flutter",
+        "Kotlin",
+        "HTML/CSS",
+        "SQL",
+        "C/C++",
+        "C#",
+      ]
+  - section_name: "Developer Tools"
+    details:
+      [
+        "Gradle",
+        "Node.js",
+        "MongoDB",
+        "AWS",
+        "Google Cloud Platform",
+        "React.js",
+        "Jest",
+        "JavaCC",
+        "Linux",
+        "Docker",
+      ]
+  - section_name: "Frameworks"
+    details:
+      [
+        "VS Code",
+        "Git",
+        "ChatGPT",
+        "Github Actions",
+        "Android Studio",
+        "SonarCloud",
+        "Elasticsearch",
+        "Bash",
+      ]
+  - section_name: "Collaborative Methodologies"
+    details:
+      [
+        "Agile",
+        "Scrum",
+        "DevOps",
+        "Test-Driven Development",
+        "Slack",
+        "Github Projects",
+        "Jira",
+      ]
 
 experience_list:
   - company: "Meta & Major League Hacking"

@@ -38,7 +38,7 @@ This CLI application tailors a YAML-formatted resume to a specific job descripti
 1. **Clone the Repository**:
    ```bash
    git clone https://github.com/goodudetheboy/autoresume.git
-   cd resume-tailor-cli
+   cd autoresume
    ```
 
 2. **Install Required Python Packages**:
