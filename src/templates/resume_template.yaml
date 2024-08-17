@@ -2,14 +2,14 @@ name: <your name>
 phone: <your phone number>
 email: <your email>
 website:
-  - link: <your website>
-  - alias: <your website alias>
+  link: <your website>
+  alias: <your website alias>
 linkedin:
-  - link: <your LinkedIn profile>
-  - alias: <your LinkedIn alias>
+  link: <your LinkedIn profile>
+  alias: <your LinkedIn alias>
 github:
-  - link: <your GitHub profile>
-  - alias: <your GitHub alias>
+  link: <your GitHub profile>
+  alias: <your GitHub alias>
 
 education_list:
   - institution: <your institution>
