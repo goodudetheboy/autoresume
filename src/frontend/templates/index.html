@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Resume Tailoring Tool</title>
+	<link rel="stylesheet" href="../static/styles/index.css">
+</head>
+
+<body>
+	<div id="autoresume-viewer">
+		<!-- Left side for the controlling input -->
+		<div class="control-container">
+			<!-- Tabs for navigation -->
+			<div class="tabs">
+				<button class="tablink" onclick="openTab(event, 'Original')" id="defaultOpen">Original</button>
+				<button class="tablink" onclick="openTab(event, 'JobDescription')">Job description</button>
+				<button class="tablink" onclick="openTab(event, 'Tailored')">Tailored</button>
+			</div>
+
+			<!-- Tab content -->
+			<div id="Original" class="tabcontent">
+				<textarea class="text-editor" placeholder="resume.yaml"></textarea>
+			</div>
+
+			<div id="JobDescription" class="tabcontent">
+				<div class="job-description-container">
+					<input type="text" class="company-name" placeholder="Company name">
+					<textarea class="job-description" placeholder="Job Description"></textarea>
+					<button class="tailor-button">Tailor resume</button>
+				</div>
+			</div>
+
+			<div id="Tailored" class="tabcontent">
+				<textarea class="text-editor" placeholder="tailored_resume.yaml"></textarea>
+				<button class="regenerate-button">Regenerate</button>
+			</div>
+		</div>
+
+		<!-- Right side for the PDF viewer -->
+		<div class="viewer-container">
+			<div class="viewer-tabs">
+				<button class="viewlink" onclick="openResume(event, 'OriginalPDF')" id="defaultResume">Original</button>
+				<button class="viewlink" onclick="openResume(event, 'TailoredPDF')">Tailored</button>
+			</div>
+			<div class="resume-viewer">
+				<embed id="OriginalPDF" src="original_resume.pdf" width="100%" height="100%" type="application/pdf">
+				<embed id="TailoredPDF" src="tailored_resume.pdf" width="100%" height="100%" type="application/pdf"
+					style="display:none;">
+			</div>
+		</div>
+	</div>
+	<script src="../static/scripts/index.js"></script>
+</body>
+
+</html>
