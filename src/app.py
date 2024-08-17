@@ -36,14 +36,21 @@ def post_validate_resume():
         return jsonify({"result": "valid"}), 200
 
     except yaml.YAMLError as e:
-        return jsonify({"result": "invalid", "error": "Invalid YAML", "details": str(e)}), 200
+        return jsonify({"result": "invalid", "error": "Invalid YAML", "details": [str(e)]}), 200
 
     except ValidationError as e:
         # Return Pydantic validation errors
         details = []
         for error in e.errors():
-            details.append({"loc": error["loc"], "msg": error["msg"]})
-        return jsonify({"result": "invalid", "error": "Schema validation failed", "details": details}), 200
+            location, msg = "->".join([str(loc)
+                                       for loc in error["loc"]]), error["msg"]
+            details.append(f"Problem at [{location}] with error [{msg}]")
+        return jsonify(
+            {
+                "result": "invalid",
+                "error": "Schema validation failed",
+                "details": details
+            }), 200
 
     except Exception as e:
         return jsonify({"error": "An unknown error occurred"}), 500

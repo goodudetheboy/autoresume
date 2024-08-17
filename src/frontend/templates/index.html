@@ -27,7 +27,10 @@
         <h3 class="tab-title-text">Input your resume here using the template</h3>
         <button class="tab-button" onclick="validateResume()">Validate</button>
         <button class="tab-button">Generate</button>
-        <textarea id="original_resume" class="text-editor" placeholder="resume.yaml">{{resume_yaml_template}}</textarea>
+        <textarea id="original-resume-editor" class="text-editor resume-editor"
+          placeholder="resume.yaml">{{resume_yaml_template}}</textarea>
+        <textarea id="original-resume-error-viewer" class="text-editor error-viewer"
+          placeholder="Validation results will appear here" disabled></textarea>
       </div>
 
       <div id="JobDescription" class="tabcontent">
@@ -42,7 +45,7 @@
       <div id="Tailored" class="tabcontent">
         <h3 class="tab-title-text">Make changes to tailored resume to your heart's desire</h3>
         <button class="tab-button">Regenerate</button>
-        <textarea class="text-editor" placeholder="tailored_resume.yaml"></textarea>
+        <textarea class="text-editor resume-editor" placeholder="tailored_resume.yaml"></textarea>
       </div>
     </div>
 

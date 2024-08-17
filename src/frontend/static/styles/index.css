@@ -1,154 +1,163 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
 }
 
 #autoresume-header {
-    padding: 30px;
+	padding: 30px;
 }
 
 #autoresume-viewer {
-    display: flex;
-    width: 100%;
-    max-width: 1500px;
-    height: 100vh
+	display: flex;
+	width: 100%;
+	max-width: 1500px;
+	height: 100vh
 }
 
 .control-container {
-    display: flex;
-    width: 50%;
-    height: 100%;
-    flex-direction: column;
+	display: flex;
+	width: 50%;
+	height: 100%;
+	flex-direction: column;
 }
 
 .tabs {
-    display: flex;
-    justify-content: flex-start;
-    border-bottom: 1px solid #ccc;
+	display: flex;
+	justify-content: flex-start;
+	border-bottom: 1px solid #ccc;
 }
 
 .tablink {
-    background-color: #f1f1f1;
-    color: black;
-    padding: 10px;
-    border: 1px solid #ccc;
-    cursor: pointer;
+	background-color: #f1f1f1;
+	color: black;
+	padding: 10px;
+	border: 1px solid #ccc;
+	cursor: pointer;
 }
 
 .tablink:hover {
-    background-color: #ddd;
+	background-color: #ddd;
 }
 
 .tablink.active {
-    background-color: #007bff;
-    color: white;
+	background-color: #007bff;
+	color: white;
 }
 
 .tabcontent {
-    display: none;
-    padding: 20px;
-    border: 1px solid #ccc;
-    height: 100%;
-    background-color: #f9f9f9;
+	display: none;
+	padding: 20px;
+	border: 1px solid #ccc;
+	height: 100%;
+	background-color: #f9f9f9;
+	max-height: 1500px;
 }
 
 .tabcontent .tab-title-text {
-    margin-bottom: 20px;
+	margin-bottom: 20px;
 }
 
 .tabcontent .text-editor {
-    width: 100%;
-    height: 100%;
-    max-height: 80vh;
-    border: 1px solid #ccc;
-    padding: 10px;
-    font-family: monospace;
+	width: 100%;
+	border: 1px solid #ccc;
+	padding: 10px;
+	font-family: monospace;
+	resize: none;
+}
+
+.tabcontent .error-viewer {
+	height: 20%;
+
+}
+
+.tabcontent .resume-editor {
+	height: 70%;
 }
 
 .job-description-container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
 }
 
 .company-name {
-    font-size: 18px;
-    padding: 10px;
-    margin-bottom: 10px;
-    border: 1px solid #ccc;
+	font-size: 18px;
+	padding: 10px;
+	margin-bottom: 10px;
+	border: 1px solid #ccc;
 }
 
 .job-description {
-    flex-grow: 1;
-    padding: 10px;
-    border: 1px solid #ccc;
-    font-family: monospace;
-    resize: none;
+	flex-grow: 1;
+	padding: 10px;
+	border: 1px solid #ccc;
+	font-family: monospace;
+	resize: none;
 }
 
 .tab-button {
-    background-color: #007bff;
-    color: white;
-    padding: 10px;
-    border: none;
-    cursor: pointer;
-    text-align: center;
-    margin: 10px 0;
+	background-color: #007bff;
+	color: white;
+	padding: 10px;
+	border: none;
+	cursor: pointer;
+	text-align: center;
+	margin: 10px 0;
 }
 
 .tab-button:hover {
-    background-color: #0056b3;
+	background-color: #0056b3;
 }
 
 .viewer-container {
-    width: 50%;
-    border-left: 1px solid #ccc;
-    display: flex;
-    flex-direction: column;
-    height: 100%;
+	width: 50%;
+	border-left: 1px solid #ccc;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
 }
 
 .viewer-tabs {
-    display: flex;
-    justify-content: flex-start;
-    border-bottom: 1px solid #ccc;
+	display: flex;
+	justify-content: flex-start;
+	border-bottom: 1px solid #ccc;
 }
 
 .viewlink {
-    background-color: #f1f1f1;
-    color: black;
-    padding: 10px;
-    border: 1px solid #ccc;
-    cursor: pointer;
+	background-color: #f1f1f1;
+	color: black;
+	padding: 10px;
+	border: 1px solid #ccc;
+	cursor: pointer;
 }
 
 .viewlink:hover {
-    background-color: #ddd;
+	background-color: #ddd;
 }
 
 .viewlink.active {
-    background-color: #007bff;
-    color: white;
+	background-color: #007bff;
+	color: white;
 }
 
 .resume-viewer {
-    flex-grow: 1;
-    padding: 20px;
-    position: relative;
+	flex-grow: 1;
+	padding: 20px;
+	position: relative;
 }
 
 .resume-viewer embed {
-    width: 100%;
-    height: 100%;
-    border: none;
-    display: none;
+	width: 100%;
+	height: 100%;
+	border: none;
+	display: none;
 }
