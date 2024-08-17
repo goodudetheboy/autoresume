@@ -32,7 +32,7 @@ class ResumeAPITestCase(unittest.TestCase):
         response = self.app.post("/api/resume/validate", json=json_payload)
 
         self.assertEqual(response.status_code, 200)
-        print(response.get_json())
+
         expected_response = {"details": [
             "Problem at [phone] with error [Field required]",
             "Problem at [email] with error [Field required]",
@@ -59,5 +59,20 @@ class ResumeAPITestCase(unittest.TestCase):
 
         expected_response = {
             "error": "No resume provided"
+        }
+        self.assertEqual(response.get_json(), expected_response)
+
+    def test_post_generate_resume(self):
+        with open("./tests/data/test_resume.yaml", "r") as resume_file:
+            resume_yaml = resume_file.read()
+        json_payload = {
+            "resume": resume_yaml,
+        }
+
+        response = self.app.post("/api/resume/generate", json=json_payload)
+
+        self.assertEqual(response.status_code, 200)
+        expected_response = {
+            "result": "valid"
         }
         self.assertEqual(response.get_json(), expected_response)
