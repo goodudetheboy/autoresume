@@ -60,14 +60,6 @@ def main():
 	# Process the resume with the tailor module
 	analysis = tailor_resume_by_job_description(resume_data, job_description)
 
-	# Handle LaTeX rendering and PDF generation
-	render_data(
-		analysis["resume"],
-		resume_name=args.resume_name,
-		output_latex_path=args.output_dir_tex if args.tex else None,
-		output_pdf_path=args.output_dir_pdf if args.pdf else None
-	)
-
 	# Print resume in YAML
 	print("Here is your resume in YAML")
 	print(yaml.safe_dump(analysis["resume"]))
@@ -77,14 +69,27 @@ def main():
 	for keyword in analysis["keywords"]:
 		print(f"\t- {keyword}")
 	print()
-	
-	# Print confirmation
-	if args.tex:
-		output_latex_path = os.path.join(args.output_dir_tex, f"{args.resume_name}.tex")
-		print(f"Your resume has been saved into a LaTeX file at {os.path.abspath(output_latex_path)}")
-	if args.pdf:
-		output_pdf_path = os.path.join(args.output_dir_pdf, f"{args.resume_name}.pdf")
-		print(f"Your resume has been saved into a PDF file at {os.path.abspath(output_pdf_path)}")
+
+	try:
+		# Handle LaTeX rendering and PDF generation
+		render_data(
+			analysis["resume"],
+			resume_name=args.resume_name,
+			output_latex_path=args.output_dir_tex if args.tex else None,
+			output_pdf_path=args.output_dir_pdf if args.pdf else None
+		)
+
+		
+		# Print confirmation
+		if args.tex:
+			output_latex_path = os.path.join(args.output_dir_tex, f"{args.resume_name}.tex")
+			print(f"Your resume has been saved into a LaTeX file at {os.path.abspath(output_latex_path)}")
+		if args.pdf:
+			output_pdf_path = os.path.join(args.output_dir_pdf, f"{args.resume_name}.pdf")
+			print(f"Your resume has been saved into a PDF file at {os.path.abspath(output_pdf_path)}")
+	except Exception as e:
+		print("There was an error rendering your resume o.o")
+		print(f"Error: {str(e)}")
 
 if __name__ == "__main__":
 	main()

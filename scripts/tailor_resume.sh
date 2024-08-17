@@ -9,8 +9,14 @@ fi
 echo "Tailoring resume for $1"
 
 cd src
+
+mkdir -p ../my_resume/output/$1
+
 python cli.py ../my_resume/resume.yaml ../my_resume/job_description/$1.txt \
   --resume-name $1 \
   --tex --output-dir-tex ../my_resume/output/$1 \
   --pdf --output-dir-pdf ../my_resume/output/$1 \
+  > ../my_resume/output/$1/result.txt
+
+cat ../my_resume/output/$1/result.txt
 
