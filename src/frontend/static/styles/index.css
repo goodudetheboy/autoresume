@@ -118,6 +118,10 @@ body {
 	background-color: #0056b3;
 }
 
+.tab-button:disabled {
+	background-color: grey;
+}
+
 .viewer-container {
 	width: 50%;
 	border-left: 1px solid #ccc;

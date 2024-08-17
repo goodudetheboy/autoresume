@@ -47,6 +47,8 @@ document.getElementById("defaultResume").click();
 function validateResume() {
   const resumeYaml = document.getElementById("original-resume-editor").value;
   const errorViewer = document.getElementById("original-resume-error-viewer");
+  const validateButton = document.getElementById("validate-button");
+  validateButton.disabled = true;
   errorViewer.value = "Sending request to server..."
   fetch("/api/resume/validate", {
     method: "POST",
@@ -74,10 +76,12 @@ function validateResume() {
       } else {
         errorViewer.value = "An unknown error has occured 💀"
       }
+      validateButton.disabled = false;
     })
     .catch(error => {
       let errorMsg = "There is some trouble connecting to the server";
       errorMsg += `\nError: ${error}`
       errorViewer.value = errorMsg;
+      validateButton.disabled = false;
     })
 }
