@@ -9,13 +9,18 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	flex-direction: column;
+}
+
+#autoresume-header {
+	padding: 30px;
 }
 
 #autoresume-viewer {
 	display: flex;
 	width: 100%;
-	max-width: 1000px;
-	height: 1000px;
+	max-width: 1500px;
+	height: 100vh
 }
 
 .control-container {
@@ -56,6 +61,10 @@ body {
 	background-color: #f9f9f9;
 }
 
+.tabcontent .tab-title-text {
+	margin-bottom: 20px;
+}
+
 .tabcontent .text-editor {
 	width: 100%;
 	height: calc(100% - 50px);
@@ -85,19 +94,17 @@ body {
 	resize: none;
 }
 
-.tailor-button,
-.regenerate-button {
+.tab-button {
 	background-color: #007bff;
 	color: white;
 	padding: 10px;
 	border: none;
 	cursor: pointer;
 	text-align: center;
-	margin-top: 10px;
+	margin: 10px 0;
 }
 
-.tailor-button:hover,
-.regenerate-button:hover {
+.tab-button:hover {
 	background-color: #0056b3;
 }
 
