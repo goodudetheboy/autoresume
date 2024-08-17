@@ -43,3 +43,31 @@ function openResume(evt, resumeId) {
 
 // Open default resume
 document.getElementById("defaultResume").click();
+
+function validateResume() {
+  const resume_yaml = document.getElementById("original_resume").value;
+  console.log(resume_yaml);
+  fetch("/api/resume/validate", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      "resume": resume_yaml
+    })
+  })
+    .then(response => response.json())
+    .then(data => {
+      result = data.result;
+      if (result == "invalid") {
+        alert(`There was an error validating your resume, error ${data.details}`);
+      } else if (result === "valid") {
+        alert("Your resume looks good!");
+      } else {
+        alert("An unknown error has occured");
+      }
+    })
+    .catch(error => {
+      console.error(error);
+    })
+}
