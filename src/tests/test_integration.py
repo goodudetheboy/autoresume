@@ -4,25 +4,25 @@ from content.tailor import *
 from content.render import *
 
 class IntegrationTest(unittest.TestCase):
-	def test_tailor_and_render_resume(self):
-		with open("./tests/data/test_resume.yaml", 'r') as file:
-			data = yaml.safe_load(file)
+    def test_tailor_and_render_resume(self):
+        with open("./tests/data/test_resume.yaml", 'r') as file:
+            data = yaml.safe_load(file)
 
-		with open("./tests/data/test_job_description.txt", "r") as file:
-			jd = file.read()
+        with open("./tests/data/test_job_description.txt", "r") as file:
+            jd = file.read()
 
-		result = tailor_resume_by_job_description(data, jd)
+        result = tailor_resume_by_job_description(data, jd)
 
-		self.assertIsNotNone(result)
+        self.assertIsNotNone(result)
 
-		tailored_resume = result["resume"]
+        tailored_resume = result["resume"]
 
-		latex_string = render_data(tailored_resume)
+        latex_string = render_data(tailored_resume)
 
-		with open("./tests/data/actual_tailored.tex", 'w') as file:
-			file.write(latex_string)
+        with open("./tests/data/actual_tailored.tex", 'w') as file:
+            file.write(latex_string)
 
 
-		result = subprocess.run(["pdflatex", "-halt-on-error", "-output-directory", "./tests/data", "./tests/data/actual_tailored.tex"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        result = subprocess.run(["pdflatex", "-halt-on-error", "-output-directory", "./tests/data", "./tests/data/actual_tailored.tex"], stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
 
-		self.assertEqual(result.returncode, 0)
+        self.assertEqual(result.returncode, 0)
