@@ -57,7 +57,7 @@ body {
 	display: none;
 	padding: 20px;
 	border: 1px solid #ccc;
-	height: calc(100% - 50px);
+	height: 100%;
 	background-color: #f9f9f9;
 }
 
@@ -67,7 +67,8 @@ body {
 
 .tabcontent .text-editor {
 	width: 100%;
-	height: calc(100% - 50px);
+	height: 100%;
+	max-height: 80vh;
 	border: 1px solid #ccc;
 	padding: 10px;
 	font-family: monospace;
