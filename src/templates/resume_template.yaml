@@ -37,7 +37,7 @@ experience_list:
   # more experience entries here
 
 project_list:
-  - name: Project Bame
+  - name: Project Name
     link: https://your-project-link.com
     summary: brief summary of the project
     duration: Jan XXXX - Dec XXXX
@@ -47,7 +47,7 @@ project_list:
   # more project entries here
 
 awards_list:
-  - name: award or recognition
+  - name: Award/Recognition Name
     description: description of the award
-    date: date of the award
+    date: Jan XXXX
   # more awards entries here
