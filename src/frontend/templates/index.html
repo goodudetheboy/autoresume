@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="../static/styles/index.css">
 </head>
 
-<body>
+<body onload="startup()">
   <div id="autoresume-header">
     <h1>Tailor your resume with AI</h1>
   </div>
@@ -56,9 +56,9 @@
         <button class="viewlink" onclick="openResume(event, 'tailored-resume-pdf')">Tailored</button>
       </div>
       <div class="resume-viewer">
-        <embed id="original-resume-pdf" src="original_resume.pdf" width="100%" height="100%" type="application/pdf">
-        <embed id="tailored-resume-pdf" src="tailored_resume.pdf" width="100%" height="100%" type="application/pdf"
-          style="display:none;">
+        <h3 id="viewer-title-text" class="tab-title-text">Resume viewer</h3>
+        <embed id="original-resume-pdf" width="100%" height="100%" type="application/pdf">
+        <embed id="tailored-resume-pdf" width="100%" height="100%" type="application/pdf" style="display:none;">
       </div>
     </div>
   </div>

@@ -1,3 +1,7 @@
+function startup() {
+  resumeAction("render");
+}
+
 function openTab(evt, tabName) {
   let i, tabcontent, tablinks;
 
