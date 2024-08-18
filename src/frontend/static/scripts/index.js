@@ -44,13 +44,20 @@ function openResume(evt, resumeId) {
 // Open default resume
 document.getElementById("defaultResume").click();
 
-function validateResume() {
+function disableControlButtons(status) {
+  const controlButtons = document.getElementsByClassName("tab-button");
+  for (let i in controlButtons) {
+    controlButtons[i].disabled = status
+  }
+}
+
+function resumeAction(action) {
+  // action can be validate or generate
   const resumeYaml = document.getElementById("original-resume-editor").value;
   const errorViewer = document.getElementById("original-resume-error-viewer");
-  const validateButton = document.getElementById("validate-button");
-  validateButton.disabled = true;
+  disableControlButtons(true);
   errorViewer.value = "Sending request to server..."
-  fetch("/api/resume/validate", {
+  fetch(`/api/resume/${action}`, {
     method: "POST",
     headers: {
       "Content-Type": "application/json"
@@ -59,29 +66,40 @@ function validateResume() {
       "resume": resumeYaml
     })
   })
-    .then(response => response.json())
-    .then(data => {
-      result = data.result;
-      console.log(data);
-      if (result == "invalid") {
-        let errorMsg = "There was an error validating your resume ❌❌❌❌❌";
-        errorMsg += `\nError: ${data.error}`;
-        errorMsg += "\nDetails:";
-        for (let i in data.details) {
-          errorMsg += `\n\t${data.details[i]}`;
-        }
-        errorViewer.value = errorMsg;
-      } else if (result === "valid") {
-        errorViewer.value = "Your resume looks good! ✅✅✅✅✅"
-      } else {
-        errorViewer.value = "An unknown error has occured 💀"
+    .then(response => {
+      if (action === "render" && response.status === 201) {
+        return response.blob();
       }
-      validateButton.disabled = false;
+      return response.json();
+    })
+    .then(data => {
+      if (data.type === "application/pdf") {
+        const pdfUrl = URL.createObjectURL(data);
+        const resumeViewer = document.getElementById('original-resume-pdf');
+        resumeViewer.src = pdfUrl;
+        errorViewer.value = "Your resume is generated! 🤩🤩🤩🤩🤩"
+      } else {
+        result = data.result;
+        if (result == "invalid") {
+          let errorMsg = "There was an error validating your resume ❌❌❌❌❌";
+          errorMsg += `\nError: ${data.error}`;
+          errorMsg += "\nDetails:";
+          for (let i in data.details) {
+            errorMsg += `\n\t${data.details[i]}`;
+          }
+          errorViewer.value = errorMsg;
+        } else if (result === "valid") {
+          errorViewer.value = "Your resume looks good! ✅✅✅✅✅"
+        } else {
+          errorViewer.value = "An unknown error has occured 💀"
+        }
+      }
+      disableControlButtons(false);
     })
     .catch(error => {
       let errorMsg = "There is some trouble connecting to the server";
       errorMsg += `\nError: ${error}`
       errorViewer.value = errorMsg;
-      validateButton.disabled = false;
+      disableControlButtons(false);
     })
 }

@@ -25,8 +25,8 @@
       <!-- Tab content -->
       <div id="Original" class="tabcontent">
         <h3 class="tab-title-text">Input your resume here using the template</h3>
-        <button id="validate-button" class="tab-button" onclick="validateResume()">Validate</button>
-        <button class="tab-button">Generate</button>
+        <button id="validate-button" class="tab-button" onclick="resumeAction('validate')">Validate</button>
+        <button id="render-button" class="tab-button" onclick="resumeAction('render')">Render</button>
         <textarea id="original-resume-editor" class="text-editor resume-editor"
           placeholder="resume.yaml">{{resume_yaml_template}}</textarea>
         <textarea id="original-resume-error-viewer" class="text-editor error-viewer"
@@ -52,12 +52,12 @@
     <!-- Right side for the PDF viewer -->
     <div class="viewer-container">
       <div class="viewer-tabs">
-        <button class="viewlink" onclick="openResume(event, 'OriginalPDF')" id="defaultResume">Original</button>
-        <button class="viewlink" onclick="openResume(event, 'TailoredPDF')">Tailored</button>
+        <button class="viewlink" onclick="openResume(event, 'original-resume-pdf')" id="defaultResume">Original</button>
+        <button class="viewlink" onclick="openResume(event, 'tailored-resume-pdf')">Tailored</button>
       </div>
       <div class="resume-viewer">
-        <embed id="OriginalPDF" src="original_resume.pdf" width="100%" height="100%" type="application/pdf">
-        <embed id="TailoredPDF" src="tailored_resume.pdf" width="100%" height="100%" type="application/pdf"
+        <embed id="original-resume-pdf" src="original_resume.pdf" width="100%" height="100%" type="application/pdf">
+        <embed id="tailored-resume-pdf" src="tailored_resume.pdf" width="100%" height="100%" type="application/pdf"
           style="display:none;">
       </div>
     </div>

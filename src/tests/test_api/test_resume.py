@@ -70,7 +70,7 @@ class ResumeAPITestCase(unittest.TestCase):
         }
 
         response = self.app.post("/api/resume/render", json=json_payload)
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 201)
 
     def test_post_render_resume_invalid(self):
         json_payload = {
@@ -80,9 +80,6 @@ class ResumeAPITestCase(unittest.TestCase):
         response = self.app.post("/api/resume/render", json=json_payload)
 
         self.assertEqual(response.status_code, 200)
-        expected_response = {
-            "result": "valid"
-        }
 
         expected_response = {"details": [
             "Problem at [phone] with error [Field required]",

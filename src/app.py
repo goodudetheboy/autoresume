@@ -80,7 +80,7 @@ def post_generate_resume():
                 return_data,
                 mimetype="application/pdf",
                 as_attachment=True,
-                download_name="generated.pdf")
+                download_name="generated.pdf"), 201
     except Exception as e:
         print(e)
         return jsonify({"error": "An unknown error occurred"}), 500
