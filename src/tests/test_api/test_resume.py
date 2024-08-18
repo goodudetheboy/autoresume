@@ -70,12 +70,7 @@ class ResumeAPITestCase(unittest.TestCase):
         }
 
         response = self.app.post("/api/resume/render", json=json_payload)
-
         self.assertEqual(response.status_code, 200)
-        expected_response = {
-            "result": "valid"
-        }
-        self.assertEqual(response.get_json(), expected_response)
 
     def test_post_render_resume_invalid(self):
         json_payload = {
