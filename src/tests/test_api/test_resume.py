@@ -1,4 +1,5 @@
 import unittest
+import yaml
 from app import app
 
 
@@ -71,7 +72,6 @@ class ResumeAPITestCase(unittest.TestCase):
 
         response = self.app.post("/api/resume/render", json=json_payload)
 
-        response.blob
         self.assertEqual(response.status_code, 201)
 
     def test_post_render_resume_invalid(self):
@@ -113,4 +113,23 @@ class ResumeAPITestCase(unittest.TestCase):
         response = self.app.post("/api/resume/tailor", json=json_payload)
 
         self.assertEqual(response.status_code, 200)
-        self.assertIn("tailored_resume", response.get_json())
+        response_json = response.get_json()
+        self.assertIn("tailored_resume", response_json)
+        self.assertIn("keywords", response_json)
+
+        self.assertTrue(yaml.safe_load(response_json["tailored_resume"]))
+
+    def test_post_tailor_resume_missing_fields(self):
+        json_payload = {
+            "resume": "name: Vuong Ho",
+        }
+
+        response = self.app.post("/api/resume/tailor", json=json_payload)
+
+        self.assertEqual(response.status_code, 400)
+
+        expected_response = {
+            "error": "Missing job description"
+        }
+
+        self.assertEqual(response.get_json(), expected_response)

@@ -8,15 +8,16 @@ import yaml
 # Setup Jinja2 environment and load template
 file_loader = FileSystemLoader('templates')
 env = Environment(
-        loader=file_loader, 
-    )
+    loader=file_loader,
+)
 prompt_template = env.get_template('./tailor_resume_prompt_template.jinja')
 
 # Get resume template
 with open("./templates/resume_template.yaml") as file:
     resume_yaml_template = file.read()
 
-def tailor_resume_by_job_description(resume: dict, job_description: str):
+
+def tailor_resume_by_job_description(resume: dict, job_description: str) -> dict:
     headers = {
         "Content-Type": "application/json",
         "Authorization": f"Bearer { os.environ.get('OPENAI_API_KEY') }"
@@ -37,7 +38,7 @@ def tailor_resume_by_job_description(resume: dict, job_description: str):
 
     payload = {
         "model": "gpt-4o-mini",
-      "response_format": {"type": "json_object"},
+        "response_format": {"type": "json_object"},
         "messages": [
             {
                 "role": "user",
@@ -53,19 +54,19 @@ def tailor_resume_by_job_description(resume: dict, job_description: str):
 
     return response_json
 
+
 def _send_request(
-        payload: dict,
-        headers: dict
-    ) -> str:
-        payload_bytes = io.BytesIO(json.dumps(payload).encode('utf-8'))
+    payload: dict,
+    headers: dict
+) -> str:
+    payload_bytes = io.BytesIO(json.dumps(payload).encode('utf-8'))
 
-        response = requests.post(
-            url="https://api.openai.com/v1/chat/completions",
-            data=payload_bytes,
-            headers=headers
-        )
-        response_json = response.json()
-        content_raw = response_json["choices"][0]["message"]["content"]
+    response = requests.post(
+        url="https://api.openai.com/v1/chat/completions",
+        data=payload_bytes,
+        headers=headers
+    )
+    response_json = response.json()
+    content_raw = response_json["choices"][0]["message"]["content"]
 
-        return content_raw
-
+    return content_raw

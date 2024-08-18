@@ -6,6 +6,7 @@ import tempfile
 
 from content.validate import validate_resume
 from content.render import render_data, render_latex_to_pdf
+from content.tailor import tailor_resume_by_job_description
 from flask import Flask, render_template, request, jsonify, send_file, send_from_directory
 from pydantic import ValidationError
 
@@ -81,6 +82,39 @@ def post_generate_resume():
                 mimetype="application/pdf",
                 as_attachment=True,
                 download_name="generated.pdf"), 201
+    except Exception as e:
+        print(e)
+        return jsonify({"error": "An unknown error occurred"}), 500
+
+
+@app.route("/api/resume/tailor", methods=["POST"])
+def post_tailor_resume():
+    try:
+        # Get JSON data from the request
+        data = request.get_json()
+        resume_yaml = data.get("resume")
+        job_description = data.get("job_description")
+
+        if resume_yaml is None:
+            return jsonify({"error": "Missing resume"}), 400
+
+        if job_description is None:
+            return jsonify({"error": "Missing job description"}), 400
+
+        resume = yaml.safe_load(resume_yaml)
+
+        # contains "keywords" and "resume" both in json
+        result = tailor_resume_by_job_description(resume, job_description)
+
+        tailored_yaml = yaml.safe_dump(result["resume"])
+
+        response = {
+            "tailored_resume": tailored_yaml,
+            "keywords": result["keywords"]
+        }
+
+        return jsonify(response), 200
+
     except Exception as e:
         print(e)
         return jsonify({"error": "An unknown error occurred"}), 500
