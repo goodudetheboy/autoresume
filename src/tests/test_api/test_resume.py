@@ -70,6 +70,8 @@ class ResumeAPITestCase(unittest.TestCase):
         }
 
         response = self.app.post("/api/resume/render", json=json_payload)
+
+        response.blob
         self.assertEqual(response.status_code, 201)
 
     def test_post_render_resume_invalid(self):
@@ -97,3 +99,18 @@ class ResumeAPITestCase(unittest.TestCase):
             "result": "invalid"
         }
         self.assertEqual(response.get_json(), expected_response)
+
+    def test_post_tailor_resume_valid(self):
+        with open("./tests/data/test_resume.yaml", "r") as resume_file:
+            resume_yaml = resume_file.read()
+        with open("./tests/data/test_job_description.txt", "r") as jd_file:
+            job_description = jd_file.read()
+        json_payload = {
+            "resume": resume_yaml,
+            "job_description": job_description
+        }
+
+        response = self.app.post("/api/resume/tailor", json=json_payload)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertIn("tailored_resume", response.get_json())
