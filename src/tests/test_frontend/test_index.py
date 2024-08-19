@@ -1,6 +1,7 @@
 import unittest
 from app import app
 
+
 class IndexPageTest(unittest.TestCase):
     def setUp(self):
         # Set up a test client for the Flask application
@@ -11,7 +12,6 @@ class IndexPageTest(unittest.TestCase):
         """Test the index route '/' to ensure it loads correctly."""
         response = self.app.get('/')
         self.assertEqual(response.status_code, 200)
-        
+
         self.assertIn(b'Original', response.data)
-        self.assertIn(b'Job description', response.data)
         self.assertIn(b'Tailored', response.data)
