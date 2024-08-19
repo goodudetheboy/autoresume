@@ -1,5 +1,5 @@
 function startup() {
-  resumeAction("render");
+  resumeAction("render", "original");
 }
 
 function openTab(tabName) {
@@ -25,7 +25,7 @@ function openTab(tabName) {
 // Open default tab
 document.getElementsByClassName("defaultOpen")[0].click();
 
-function openResume(evt, resumeId) {
+function openResume(resumeId) {
   let i, resumes, viewlinks;
 
   // Hide all resume embeds
@@ -41,12 +41,12 @@ function openResume(evt, resumeId) {
   }
 
   // Show the selected resume, and add an "active" class to the button that opened the resume
-  document.getElementById(resumeId).style.display = "block";
-  evt.currentTarget.className += " active";
+  document.getElementById(`${resumeId}-resume-pdf`).style.display = "block";
+  document.getElementById(`${resumeId}-viewer-tab-button`).className += " active";
 }
 
 // Open default resume
-document.getElementById("defaultResume").click();
+document.getElementsByClassName("defaultResume")[0].click();
 
 function disableControlButtons(status) {
   const controlButtons = document.getElementsByClassName("tab-button");
@@ -55,10 +55,11 @@ function disableControlButtons(status) {
   }
 }
 
-function resumeAction(action) {
+function resumeAction(action, type) {
   // action can be validate or generate
-  const resumeYaml = document.getElementById("original-resume-editor").value;
-  const errorViewer = document.getElementById("original-resume-error-viewer");
+  // type can be original or tailored
+  const resumeYaml = document.getElementById(`${type}-resume-editor`).value;
+  const errorViewer = document.getElementById(`${type}-resume-error-viewer`);
   disableControlButtons(true);
   errorViewer.value = "Sending request to server..."
   fetch(`/api/resume/${action}`, {
@@ -79,7 +80,8 @@ function resumeAction(action) {
     .then(data => {
       if (data.type === "application/pdf") {
         const pdfUrl = URL.createObjectURL(data);
-        const resumeViewer = document.getElementById('original-resume-pdf');
+        const resumeViewer = document.getElementById(`${type}-resume-pdf`);
+        openResume(type);
         resumeViewer.src = pdfUrl;
         errorViewer.value = "Your resume is generated! 🤩🤩🤩🤩🤩"
       } else {
@@ -108,12 +110,11 @@ function resumeAction(action) {
     })
 }
 
-function tailorResume(evt) {
+function tailorResume() {
   const originalResumeYaml = document.getElementById("original-resume-editor").value;
   const companyName = document.getElementById("company-name").value;
   const jobDescription = document.getElementById("job-description-editor").value;
   const errorViewer = document.getElementById("tailored-resume-error-viewer");
-  console.log(jobDescription);
   if (!companyName || !jobDescription) {
     return;
   }
@@ -130,12 +131,14 @@ function tailorResume(evt) {
   })
     .then(response => response.json())
     .then(data => {
-      console.log(data);
-      disableControlButtons(false);
-
+      const tailored_resume = data.tailored_resume;
+      document.getElementById("tailored-resume-editor").value = tailored_resume;
+      errorViewer.value = "Your resume has been tailored ⭐⭐⭐⭐⭐\n Now rendering it for you..."
+      openTab("Tailored");
+      resumeAction("render", "tailored");
     })
     .catch(error => {
-      let errorMsg = "There is some trouble connecting to the server";
+      let errorMsg = "There is some trouble connecting to the server, please try again";
       errorMsg += `\nError: ${error}`
       errorViewer.value = errorMsg;
       disableControlButtons(false);

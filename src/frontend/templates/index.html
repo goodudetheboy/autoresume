@@ -17,9 +17,9 @@
     <div class="control-container">
       <!-- Tabs for navigation -->
       <div class="tabs">
-        <button id="Original-editor-tab-button" class="tablink" onclick="openTab('Original')">Original</button>
-        <button id="JobDescription-editor-tab-button" class="tablink defaultOpen"
-          onclick="openTab('JobDescription')">Job
+        <button id="Original-editor-tab-button" class="tablink  defaultOpen"
+          onclick="openTab('Original')">Original</button>
+        <button id="JobDescription-editor-tab-button" class="tablink" onclick="openTab('JobDescription')">Job
           description</button>
         <button id="Tailored-editor-tab-button" class="tablink" onclick="openTab('Tailored')">Tailored</button>
       </div>
@@ -27,10 +27,12 @@
       <!-- Tab content -->
       <div id="Original" class="tabcontent">
         <h3 class="tab-title-text">Input your resume here using the template</h3>
-        <button id="validate-button" class="tab-button" onclick="resumeAction('validate')">Validate</button>
-        <button id="render-button" class="tab-button" onclick="resumeAction('render')">Render</button>
+        <button id="original-validate-button" class="tab-button"
+          onclick="resumeAction('validate', 'original')">Validate</button>
+        <button id="original-render-button" class="tab-button"
+          onclick="resumeAction('render', 'original')">Render</button>
         <textarea id="original-resume-editor" class="text-editor resume-editor"
-          placeholder="resume.yaml">{{resume_yaml_template}}</textarea>
+          placeholder="You can edit, copy, or paste your or other's resume here.">{{resume_yaml_template}}</textarea>
         <textarea id="original-resume-error-viewer" class="text-editor error-viewer"
           placeholder="Validation results will appear here" disabled></textarea>
       </div>
@@ -46,9 +48,12 @@
 
       <div id="Tailored" class="tabcontent">
         <h3 class="tab-title-text">Make changes to tailored resume to your heart's desire</h3>
-        <button id="validate-button" class="tab-button" onclick="resumeAction('validate')">Validate</button>
-        <button id="render-button" class="tab-button" onclick="resumeAction('render')">Render</button>
-        <textarea class="text-editor resume-editor" placeholder="tailored_resume.yaml"></textarea>
+        <button id="tailored-validate-button" class="tab-button"
+          onclick="resumeAction('validate', 'tailored')">Validate</button>
+        <button id="tailored-render-button" class="tab-button"
+          onclick="resumeAction('render', 'tailored')">Render</button>
+        <textarea id="tailored-resume-editor" class="text-editor resume-editor"
+          placeholder="Your tailored resume will appear here. You can edit or copy this anywhere."></textarea>
         <textarea id="tailored-resume-error-viewer" class="text-editor error-viewer"
           placeholder="Validation results will appear here" disabled></textarea>
       </div>
@@ -57,8 +62,9 @@
     <!-- Right side for the PDF viewer -->
     <div class="viewer-container">
       <div class="viewer-tabs">
-        <button class="viewlink" onclick="openResume(event, 'original-resume-pdf')" id="defaultResume">Original</button>
-        <button class="viewlink" onclick="openResume(event, 'tailored-resume-pdf')">Tailored</button>
+        <button id="original-viewer-tab-button" class="viewlink defaultResume"
+          onclick="openResume('original')">Original</button>
+        <button id="tailored-viewer-tab-button" class="viewlink" onclick="openResume('tailored')">Tailored</button>
       </div>
       <div class="resume-viewer">
         <h3 id="viewer-title-text" class="tab-title-text">Resume viewer</h3>
