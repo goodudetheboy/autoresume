@@ -2,7 +2,7 @@ function startup() {
   resumeAction("render");
 }
 
-function openTab(evt, tabName) {
+function openTab(tabName) {
   let i, tabcontent, tablinks;
 
   // Hide all tab contents
@@ -19,11 +19,11 @@ function openTab(evt, tabName) {
 
   // Show the current tab, and add an "active" class to the button that opened the tab
   document.getElementById(tabName).style.display = "block";
-  evt.currentTarget.className += " active";
+  document.getElementById(`${tabName}-editor-tab-button`).className += " active"
 }
 
 // Open default tab
-document.getElementById("defaultOpen").click();
+document.getElementsByClassName("defaultOpen")[0].click();
 
 function openResume(evt, resumeId) {
   let i, resumes, viewlinks;
@@ -106,4 +106,38 @@ function resumeAction(action) {
       errorViewer.value = errorMsg;
       disableControlButtons(false);
     })
+}
+
+function tailorResume(evt) {
+  const originalResumeYaml = document.getElementById("original-resume-editor").value;
+  const companyName = document.getElementById("company-name").value;
+  const jobDescription = document.getElementById("job-description-editor").value;
+  const errorViewer = document.getElementById("tailored-resume-error-viewer");
+  console.log(jobDescription);
+  if (!companyName || !jobDescription) {
+    return;
+  }
+  disableControlButtons(true);
+  fetch(`/api/resume/tailor`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      "resume": originalResumeYaml,
+      "job_description": jobDescription
+    })
+  })
+    .then(response => response.json())
+    .then(data => {
+      console.log(data);
+      disableControlButtons(false);
+
+    })
+    .catch(error => {
+      let errorMsg = "There is some trouble connecting to the server";
+      errorMsg += `\nError: ${error}`
+      errorViewer.value = errorMsg;
+      disableControlButtons(false);
+    });
 }

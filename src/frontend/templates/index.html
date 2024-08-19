@@ -17,9 +17,11 @@
     <div class="control-container">
       <!-- Tabs for navigation -->
       <div class="tabs">
-        <button class="tablink" onclick="openTab(event, 'Original')" id="defaultOpen">Original</button>
-        <button class="tablink" onclick="openTab(event, 'JobDescription')">Job description</button>
-        <button class="tablink" onclick="openTab(event, 'Tailored')">Tailored</button>
+        <button id="Original-editor-tab-button" class="tablink" onclick="openTab('Original')">Original</button>
+        <button id="JobDescription-editor-tab-button" class="tablink defaultOpen"
+          onclick="openTab('JobDescription')">Job
+          description</button>
+        <button id="Tailored-editor-tab-button" class="tablink" onclick="openTab('Tailored')">Tailored</button>
       </div>
 
       <!-- Tab content -->
@@ -34,18 +36,21 @@
       </div>
 
       <div id="JobDescription" class="tabcontent">
-        <div class="job-description-container">
-          <h3 class="tab-title-text">Input company name and job description</h3>
-          <button class="tab-button">Tailor resume</button>
-          <input type="text" class="company-name" placeholder="Company name">
-          <textarea class="job-description" placeholder="Job Description"></textarea>
-        </div>
+        <h3 class="tab-title-text">Input company name and job description</h3>
+        <form id="job-description-form">
+          <button class="tab-button" onclick="tailorResume(event)">Tailor Resume</button>
+          <input id="company-name" type="text" class="company-name" placeholder="Company name" required>
+          <textarea id="job-description-editor" placeholder="Job Description" required></textarea>
+        </form>
       </div>
 
       <div id="Tailored" class="tabcontent">
         <h3 class="tab-title-text">Make changes to tailored resume to your heart's desire</h3>
-        <button class="tab-button">Regenerate</button>
+        <button id="validate-button" class="tab-button" onclick="resumeAction('validate')">Validate</button>
+        <button id="render-button" class="tab-button" onclick="resumeAction('render')">Render</button>
         <textarea class="text-editor resume-editor" placeholder="tailored_resume.yaml"></textarea>
+        <textarea id="tailored-resume-error-viewer" class="text-editor error-viewer"
+          placeholder="Validation results will appear here" disabled></textarea>
       </div>
     </div>
 
