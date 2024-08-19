@@ -25,7 +25,7 @@ function openTab(tabName) {
 // Open default tab
 document.getElementsByClassName("defaultOpen")[0].click();
 
-function openResume(resumeId) {
+function openResume(type) {
   let i, resumes, viewlinks;
 
   // Hide all resume embeds
@@ -40,9 +40,27 @@ function openResume(resumeId) {
     viewlinks[i].className = viewlinks[i].className.replace(" active", "");
   }
 
+  const resumeViewer = document.getElementById(`${type}-resume-pdf`);
+
   // Show the selected resume, and add an "active" class to the button that opened the resume
-  document.getElementById(`${resumeId}-resume-pdf`).style.display = "block";
-  document.getElementById(`${resumeId}-viewer-tab-button`).className += " active";
+  resumeViewer.style.display = "block";
+  document.getElementById(`${type}-viewer-tab-button`).className += " active";
+
+  // Set download link
+  const downloadBtn = document.getElementById('download-link');
+  if (resumeViewer.src) {
+    const companyName = document.getElementById("company-name").value;
+    // Preprocess resume name
+    let resumeName = type === "tailored" ? companyName : "original";
+    resumeName = resumeName.trim().replace(/\s+/g, '-').toLowerCase();
+
+    // Set resume download link
+    downloadBtn.href = resumeViewer.src;
+    downloadBtn.download = `${resumeName}-resume.pdf`;
+    downloadBtn.style.display = "block";
+  } else {
+    downloadBtn.style.display = "none";
+  }
 }
 
 // Open default resume
@@ -68,7 +86,7 @@ function resumeAction(action, type) {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      "resume": resumeYaml
+      "resume": resumeYaml,
     })
   })
     .then(response => {
@@ -81,9 +99,9 @@ function resumeAction(action, type) {
       if (data.type === "application/pdf") {
         const pdfUrl = URL.createObjectURL(data);
         const resumeViewer = document.getElementById(`${type}-resume-pdf`);
-        openResume(type);
         resumeViewer.src = pdfUrl;
         errorViewer.value = "Your resume is generated! 🤩🤩🤩🤩🤩"
+        openResume(type);
       } else {
         result = data.result;
         if (result == "invalid") {
