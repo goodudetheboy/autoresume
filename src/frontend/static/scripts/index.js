@@ -57,7 +57,7 @@ function openResume(type) {
     // Set resume download link
     downloadBtn.href = resumeViewer.src;
     downloadBtn.download = `${resumeName}-resume.pdf`;
-    downloadBtn.style.display = "block";
+    downloadBtn.style.display = "inline-block";
   } else {
     downloadBtn.style.display = "none";
   }
