@@ -1,51 +1,53 @@
-name: <your name>
-phone: <your phone number>
-email: <your email>
+name: your name
+phone: (123) 456-789
+email: your@email.com
 website:
-  - link: <your website>
-  - alias: <your website alias>
+  link: https://your.website
+  alias: website alias
 linkedin:
-  - link: <your LinkedIn profile>
-  - alias: <your LinkedIn alias>
+  link: https://linkedin.com/in/your_linkedin
+  alias: LinkedIn alias
 github:
-  - link: <your GitHub profile>
-  - alias: <your GitHub alias>
+  link: https://github.com/your_github
+  alias: GitHub alias
 
 education_list:
-  - institution: <your institution>
-    graduation: <your expected graduation date>
-    degree: <your degree>
-    extra_info: <any additional information>
+  - institution: Institution Name
+    graduation: Jan XXXX - Dec XXXX
+    degree: Bachelor of Something, Somehow
+    extra_info: any additional information
   # more education entries here
 
 skills:
-  - section_name: <name of your skill section here, can include languages, tools, frameworks, collaborative methodologies...>
-    details: [<your desired skills here>]
+  - section_name: Skill Section 1
+    details: ["your", "desired", "skills", "here"]
+  - section_name: Skill Section 2
+    details: ["your", "desired", "skills", "here"]
 
   # more skills here
 
 experience_list:
-  - company: <your company or organization>
-    duration: <your duration at the company>
-    role: <your role>
-    location: <your location>
+  - company: Company Name
+    duration: Jan XXXX - Dec XXXX
+    role: Your Role
+    location: your location
     details:
-      - <description of your achievements and responsibilities>
-      - <another key achievement>
+      - description of your achievements and responsibilities
+      - another key achievement
   # more experience entries here
 
 project_list:
-  - name: <project name>
-    link: <project link>
-    summary: <brief summary of the project>
-    duration: <project duration>
+  - name: Project Name
+    link: https://your-project-link.com
+    summary: brief summary of the project
+    duration: Jan XXXX - Dec XXXX
     details:
-      - <key achievement or responsibility>
-      - <another key achievement>
+      - key achievement or responsibility
+      - another key achievement
   # more project entries here
 
 awards_list:
-  - name: <award or recognition>
-    description: <description of the award>
-    date: <date of the award>
+  - name: Award/Recognition Name
+    description: description of the award
+    date: Jan XXXX
   # more awards entries here

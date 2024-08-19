@@ -3,15 +3,15 @@ import yaml
 from content.tailor import *
 
 class TailorResumeTest(unittest.TestCase):
-	def test_tailor_resume(self):
-		with open("./tests/data/test_resume.yaml", 'r') as file:
-			data = yaml.safe_load(file)
+    def test_tailor_resume(self):
+        with open("./tests/data/test_resume.yaml", 'r') as file:
+            data = yaml.safe_load(file)
 
-		with open("./tests/data/test_job_description.txt", "r") as file:
-			jd = file.read()
+        with open("./tests/data/test_job_description.txt", "r") as file:
+            jd = file.read()
 
-		result = tailor_resume_by_job_description(data, jd)
+        result = tailor_resume_by_job_description(data, jd)
 
-		self.assertIsNotNone(result)
-		self.assertIn("keywords", result)
-		self.assertIn("resume", result)
+        self.assertIsNotNone(result)
+        self.assertIn("keywords", result)
+        self.assertIn("resume", result)

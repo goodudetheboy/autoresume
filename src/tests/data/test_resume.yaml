@@ -117,7 +117,7 @@ experience_list:
 project_list:
   - name: "SwipeAndFly"
     link: "https://devpost.com/software/vietrochack"
-    description: "Hyper-personalized trip planning with TikTok videos."
+    summary: "Hyper-personalized trip planning with TikTok videos."
     duration: "Jun – Aug 2024"
     details:
       - "Led a team of 5 to create a hyper-personalized trip planning platform tailored to users travel TikTok videos."
@@ -126,7 +126,7 @@ project_list:
 
   - name: "EduVision"
     link: "https://devpost.com/software/eduvision-y9fw0g"
-    description: "Eye-tracking powered classroom assistance system."
+    summary: "Eye-tracking powered classroom assistance system."
     duration: "Mar – May 2024"
     details:
       - "Led a team of 3 in developing a classroom assistance system that utilizes real-time eye-tracking to detect possible confusing topics using students’ gaze heatmap and provide classroom statistics to instructors with their teaching."

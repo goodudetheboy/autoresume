@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Tailoring Tool</title>
+  <link rel="stylesheet" href="../static/styles/index.css">
+</head>
+
+<body onload="startup()">
+  <div id="autoresume-header">
+    <h1>Tailor your resume with AI</h1>
+  </div>
+  <div id="autoresume-viewer">
+    <!-- Left side for the controlling input -->
+    <div class="control-container">
+      <!-- Tabs for navigation -->
+      <div class="tabs">
+        <button id="Original-editor-tab-button" class="tablink  defaultOpen"
+          onclick="openTab('Original')">Original</button>
+        <button id="JobDescription-editor-tab-button" class="tablink" onclick="openTab('JobDescription')">Job
+          description</button>
+        <button id="Tailored-editor-tab-button" class="tablink" onclick="openTab('Tailored')">Tailored</button>
+      </div>
+
+      <!-- Tab content -->
+      <div id="Original" class="tabcontent">
+        <h3 class="tab-title-text">Input your resume here using the template</h3>
+        <button id="original-validate-button" class="tab-button"
+          onclick="resumeAction('validate', 'original')">Validate</button>
+        <button id="original-render-button" class="tab-button"
+          onclick="resumeAction('render', 'original')">Render</button>
+        <textarea id="original-resume-editor" class="text-editor resume-editor"
+          placeholder="You can edit, copy, or paste your or other's resume here.">{{resume_yaml_template}}</textarea>
+        <textarea id="original-resume-error-viewer" class="text-editor error-viewer"
+          placeholder="Validation results will appear here" disabled></textarea>
+      </div>
+
+      <div id="JobDescription" class="tabcontent">
+        <h3 class="tab-title-text">Input company name and job description</h3>
+        <form id="job-description-form">
+          <button class="tab-button" onclick="tailorResume(event)">Tailor Resume</button>
+          <input id="company-name" type="text" class="company-name" placeholder="Company name" required>
+          <textarea id="job-description-editor" placeholder="Job Description" required></textarea>
+        </form>
+      </div>
+
+      <div id="Tailored" class="tabcontent">
+        <h3 class="tab-title-text">Make changes to tailored resume to your heart's desire</h3>
+        <p id="tailored-tab-keywords">Keywords:</p>
+        <button id="tailored-validate-button" class="tab-button"
+          onclick="resumeAction('validate', 'tailored')">Validate</button>
+        <button id="tailored-render-button" class="tab-button"
+          onclick="resumeAction('render', 'tailored')">Render</button>
+        <textarea id="tailored-resume-editor" class="text-editor resume-editor"
+          placeholder="Your tailored resume will appear here. You can edit or copy this anywhere."></textarea>
+        <textarea id="tailored-resume-error-viewer" class="text-editor error-viewer"
+          placeholder="Validation results will appear here" disabled></textarea>
+      </div>
+    </div>
+
+    <!-- Right side for the PDF viewer -->
+    <div class="viewer-container">
+      <div class="viewer-tabs">
+        <button id="original-viewer-tab-button" class="viewlink defaultResume"
+          onclick="openResume('original')">Original</button>
+        <button id="tailored-viewer-tab-button" class="viewlink" onclick="openResume('tailored')">Tailored</button>
+      </div>
+      <div class="resume-viewer">
+        <h3 id="viewer-title-text" class="tab-title-text">Resume viewer</h3>
+        <a id="download-link" style="display: none;">
+          <button class="tablink">Download</button>
+        </a>
+        <embed id="original-resume-pdf" width="100%" height="100%" type="application/pdf">
+        <embed id="tailored-resume-pdf" width="100%" height="100%" type="application/pdf" style="display:none;">
+      </div>
+    </div>
+  </div>
+  <script src="../static/scripts/index.js"></script>
+</body>
+
+</html>
