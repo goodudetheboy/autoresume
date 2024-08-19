@@ -1,0 +1,11 @@
+services:
+  autoresume:
+    container_name: autoresume
+    build: .
+    restart: always
+    environment:
+      - OPENAI_API_KEY=<your OpenAPI Key here>
+    ports:
+      - "5000:5000"
+    volumes:
+      - .:/autoresume
