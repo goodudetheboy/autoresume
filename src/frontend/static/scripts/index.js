@@ -115,6 +115,7 @@ function tailorResume() {
   const companyName = document.getElementById("company-name").value;
   const jobDescription = document.getElementById("job-description-editor").value;
   const errorViewer = document.getElementById("tailored-resume-error-viewer");
+  const keywordsList = document.getElementById("tailored-tab-keywords");
   if (!companyName || !jobDescription) {
     return;
   }
@@ -134,6 +135,8 @@ function tailorResume() {
       const tailored_resume = data.tailored_resume;
       document.getElementById("tailored-resume-editor").value = tailored_resume;
       errorViewer.value = "Your resume has been tailored ⭐⭐⭐⭐⭐\n Now rendering it for you..."
+      let keywords = data.keywords.join(", ");
+      keywordsList.innerText = `Keywords: ${keywords}`
       openTab("Tailored");
       resumeAction("render", "tailored");
     })
