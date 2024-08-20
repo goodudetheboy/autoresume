@@ -22,10 +22,13 @@ class AnswerTest(unittest.TestCase):
         with open("./tests/data/test_job_description.txt", "r") as file:
             job_description = file.read()
 
-        answer, actual_prompt = answer_app_question(
+        result_json, actual_prompt = answer_app_question(
             test_question, resume, job_description)
 
         with open("./tests/data/test_app_question_expected.txt", "r") as file:
             expected_prompt = file.read()
-        print(actual_prompt)
+
         self.assertEqual(actual_prompt, expected_prompt)
+
+        self.assertIn("analysis", result_json)
+        self.assertIn("answer", result_json)

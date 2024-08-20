@@ -1,57 +1,4 @@
-You will be given a resume of the following yaml format name: your name
-phone: (123) 456-789
-email: your@email.com
-website:
-  link: https://your.website
-  alias: website alias
-linkedin:
-  link: https://linkedin.com/in/your_linkedin
-  alias: LinkedIn alias
-github:
-  link: https://github.com/your_github
-  alias: GitHub alias
-
-education_list:
-  - institution: Institution Name
-    graduation: Jan XXXX - Dec XXXX
-    degree: Bachelor of Something, Somehow
-    extra_info: any additional information
-  # more education entries here
-
-skills:
-  - section_name: Skill Section 1
-    details: ["your", "desired", "skills", "here"]
-  - section_name: Skill Section 2
-    details: ["your", "desired", "skills", "here"]
-
-  # more skills here
-
-experience_list:
-  - company: Company Name
-    duration: Jan XXXX - Dec XXXX
-    role: Your Role
-    location: your location
-    details:
-      - description of your achievements and responsibilities
-      - another key achievement
-  # more experience entries here
-
-project_list:
-  - name: Project Name
-    link: https://your-project-link.com
-    summary: brief summary of the project
-    duration: Jan XXXX - Dec XXXX
-    details:
-      - key achievement or responsibility
-      - another key achievement
-  # more project entries here
-
-awards_list:
-  - name: Award/Recognition Name
-    description: description of the award
-    date: Jan XXXX
-  # more awards entries here
- and a job description from a company.
+You will be given a resume and a job description from a company.
 
 Resume start:
 awards_list:
@@ -262,4 +209,13 @@ Job description end:
 
 The application has this question: "There are many valuable skills that aren't taught in the classroom or workplace. What have you learned outside of these environments that you think will make you a great intern here at Stoke?"
 
-With the knowledge of my resume and the job description, answer the above question for me.
+With the knowledge of my resume and the job description, think before answering the above question for me in the following guidelines and json format:
+
+Guidelines:
+- Keep the vocabulary simple but still professional in a semiformal way
+- Respect the word limit in the prompt and (ideally) keep it under one paragraph
+
+{
+  "analysis": <what you think what the company is looking for in this question and how should the answer reflect it,
+  "answer": <the actual answer to the questions>
+}

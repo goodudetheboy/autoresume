@@ -1,0 +1,22 @@
+You will be given a resume and a job description from a company.
+
+Resume start:
+{{ resume }}
+Resume end
+
+Job description start:
+{{ job_description }}
+Job description end:
+
+The application has this question: "{{ app_question }}"
+
+With the knowledge of my resume and the job description, think before answering the above question for me in the following guidelines and json format:
+
+Guidelines:
+- Keep the vocabulary simple but still professional in a semiformal way
+- Respect the word limit in the prompt and (ideally) keep it under one paragraph
+
+{
+  "analysis": <what you think what the company is looking for in this question and how should the answer reflect it,
+  "answer": <the actual answer to the questions>
+}
