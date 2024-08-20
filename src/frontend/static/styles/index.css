@@ -187,3 +187,12 @@ body {
 #answer-question-editor {
 	height: 20%;
 }
+
+/* Misc section */
+.error-text {
+	color: red;
+}
+
+.tabcontent .tab-subtitle-text {
+	margin-bottom: 10px;
+}

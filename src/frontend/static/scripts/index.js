@@ -165,3 +165,44 @@ function tailorResume() {
       disableControlButtons(false);
     });
 }
+
+function answerAppQuestion(event) {
+  event.preventDefault();
+  const jobDescription = document.getElementById("job-description-editor").value;
+  const originalResumeYaml = document.getElementById("original-resume-editor").value;
+  const question = document.getElementById("answer-question-editor").value;
+
+  const answerViewer = document.getElementById("answer-answer-viewer");
+  const analysisViewer = document.getElementById("answer-analysis-viewer");
+  console.log(jobDescription);
+  if (!jobDescription || !originalResumeYaml) {
+    document.getElementById("answer-empty-error-text").style.display = "inline";
+    return;
+  } else {
+    document.getElementById("answer-empty-error-text").style.display = "none";
+  }
+  disableControlButtons(true);
+  fetch(`/api/resume/answer`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      "resume": originalResumeYaml,
+      "job_description": jobDescription,
+      "question": question
+    })
+  })
+    .then(response => response.json())
+    .then(data => {
+      answerViewer.value = data.answer;
+      analysisViewer.value = data.analysis;
+      disableControlButtons(false);
+    })
+    .catch(error => {
+      let errorMsg = "There is some trouble connecting to the server, please try again";
+      errorMsg += `\nError: ${error}`
+      analysisViewer.value = errorMsg;
+      disableControlButtons(false);
+    });
+}

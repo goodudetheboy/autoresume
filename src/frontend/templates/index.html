@@ -41,7 +41,7 @@
       <div id="JobDescription" class="tabcontent">
         <h3 class="tab-title-text">Input company name and job description</h3>
         <form id="job-description-form">
-          <button class="tab-button" onclick="tailorResume(event)">Tailor Resume</button>
+          <button class="tab-button" onclick="tailorResume()">Tailor Resume</button>
           <input id="company-name" type="text" class="company-name" placeholder="Company name" required>
           <textarea id="job-description-editor" placeholder="Job Description" required></textarea>
         </form>
@@ -68,14 +68,22 @@
           it in <a
             href="https://chatgpt.com/?q=To+user+Make+sure+to+copy+the+prompt+and+paste+it+here,+To+GPT+You+dont+have+to+say+anything&temporary-chat=true"
             target="_blank">ChatGPT</a>.</p>
-        <form id="answer-question-form">
-          <button id="answer-answer-button" class="tab-button"
-            onclick="resumeAction('validate', 'tailored')">Answer</button>
-          <button id="answer-copy-prompt-button" class="tab-button" onclick="resumeAction('validate', 'tailored')">Copy
-            prompt</button>
-          <textarea id="answer-question-editor" class="text-editor"
+        <p id="answer-empty-error-text" class="tab-subtitle-text error-text" style="display: none;">Missing original
+          resume or job description!
+        </p>
+
+        <form id="answer-question-form" onsubmit="answerAppQuestion(event)">
+          <button class="tab-button" type="submit">Answer</button>
+          <button class="tab-button" onclick="copyPrompt()">Copy prompt</button>
+
+          <textarea id="answer-question-editor" class="text-editor" type="text" required
             placeholder="Input job application question here. Be sure to include any word limits."></textarea>
-          <textarea id="answer-error-viewer" class="text-editor error-viewer" placeholder="Answer will appear here"
+          <h4 class="tab-subtitle-text">Answer</h4>
+          <textarea id="answer-answer-viewer" class="text-editor error-viewer"
+            placeholder="Answer will appear here. You can edit this before pasting it in the job application."></textarea>
+          <h4 class="tab-subtitle-text">Analysis</h4>
+          <textarea id="answer-analysis-viewer" class="text-editor error-viewer"
+            placeholder="This will explain to you what the job application is looking for in asking this question."
             disabled></textarea>
         </form>
       </div>
