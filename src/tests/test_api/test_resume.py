@@ -139,16 +139,23 @@ class ResumeAPITestCase(unittest.TestCase):
     @patch("app.answer_app_question")
     def test_post_answer_app_question(self, mock_answer_app_question):
         """Test /api/resume/answer (anwer app question) endpoint """
+        with open("./tests/data/test_resume.yaml", "r") as resume_file:
+            resume_file_content = resume_file.read()
+            mock_resume = yaml.safe_load(resume_file_content)
+            mock_resume_yaml = resume_file_content
 
-        json_payload = {
-            "resume": "name: Vuong Ho",
-            "job_description": "Job Description",
-            "question": "Question here"
-        }
+        mock_job_description = "Job Description"
+        mock_question = "Question here"
 
         mock_analysis = "Analysis here"
         mock_answer = "Answer here"
         mock_prompt = "Prompt here"
+
+        json_payload = {
+            "resume": mock_resume_yaml,
+            "job_description": mock_job_description,
+            "question": mock_question
+        }
 
         mock_answer_app_question.return_value = (
             {
@@ -158,10 +165,11 @@ class ResumeAPITestCase(unittest.TestCase):
             mock_prompt)
 
         response = self.app.post("/api/resume/answer", json=json_payload)
-
         self.assertEqual(response.status_code, 200)
         self.assertEqual(response.json, {
             "analysis": mock_analysis,
             "answer": mock_answer,
             "prompt": mock_prompt
         })
+        mock_answer_app_question.assert_called_once_with(
+            mock_question, mock_resume, mock_job_description)
