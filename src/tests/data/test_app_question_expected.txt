@@ -1,0 +1,265 @@
+You will be given a resume of the following yaml format name: your name
+phone: (123) 456-789
+email: your@email.com
+website:
+  link: https://your.website
+  alias: website alias
+linkedin:
+  link: https://linkedin.com/in/your_linkedin
+  alias: LinkedIn alias
+github:
+  link: https://github.com/your_github
+  alias: GitHub alias
+
+education_list:
+  - institution: Institution Name
+    graduation: Jan XXXX - Dec XXXX
+    degree: Bachelor of Something, Somehow
+    extra_info: any additional information
+  # more education entries here
+
+skills:
+  - section_name: Skill Section 1
+    details: ["your", "desired", "skills", "here"]
+  - section_name: Skill Section 2
+    details: ["your", "desired", "skills", "here"]
+
+  # more skills here
+
+experience_list:
+  - company: Company Name
+    duration: Jan XXXX - Dec XXXX
+    role: Your Role
+    location: your location
+    details:
+      - description of your achievements and responsibilities
+      - another key achievement
+  # more experience entries here
+
+project_list:
+  - name: Project Name
+    link: https://your-project-link.com
+    summary: brief summary of the project
+    duration: Jan XXXX - Dec XXXX
+    details:
+      - key achievement or responsibility
+      - another key achievement
+  # more project entries here
+
+awards_list:
+  - name: Award/Recognition Name
+    description: description of the award
+    date: Jan XXXX
+  # more awards entries here
+ and a job description from a company.
+
+Resume start:
+awards_list:
+- date: Mar 2024
+  description: Best Education Award
+  name: YHack 2024 Hackathon at Yale University
+- date: Nov 2023
+  description: Most Dandy Hack Award
+  name: "DandyHacks\u201923 Hackathon at University of Rochester"
+- date: Oct 2023
+  description: Rank 36/93
+  name: ICPC Northeast North America Regional Contest 2023
+- date: Feb 2023
+  description: "Rank 15/84 \u2014 Bronze Medal"
+  name: ICPC Northeast North America Regional Contest 2022
+education_list:
+- degree: MS in Computer Science
+  extra_info: ''
+  graduation: Expected Dec 2025
+  institution: University of Rochester
+- degree: BS in Computer Science, BS in Applied Mathematics, Operations Research Certificate
+  extra_info: 'GPA: 3.79/4.00'
+  graduation: May 2024
+  institution: University of Rochester
+- degree: Advanced Software Engineering Certificate
+  extra_info: Remote
+  graduation: "May \u2013 Aug 2022"
+  institution: CodePath
+email: vuong@vuongho.me
+experience_list:
+- company: Meta & Major League Hacking
+  details:
+  - Chosen as one of the top 2% out of 2,500 applicants for the elite Meta & MLH Production
+    Engineering Fellowship.
+  - Developed a Flask project from scratch deployed it on cloud servers with Nginx
+    reverse proxy and SSL certificates.
+  - Leveraged GitHub Actions for CI/CD, test-driven development, and Docker to achieve
+    90% faster deployment times.
+  duration: "Jun 2024 \u2013 Present"
+  location: Rochester, NY
+  role: Site Reliability Engineering Fellow
+- company: Vietnam Tech Society
+  details:
+  - Delivered a robust TypeScript and Firebase project that enables users to configure
+    and filter appointment availability.
+  - "Deployed the \u201CFilter by Availability\u201D feature with 100% test coverage,\
+    \ resulting in a 90% improvement in usability."
+  - Reduced server cost by 25% by optimizing backend Firebase functions to operate
+    dynamically rather than periodically.
+  duration: "Jun 2022 \u2013 Jan 2023"
+  location: Rochester, NY
+  role: Software Engineer Intern
+- company: Google Summer of Code 2021
+  details:
+  - "Engineered a key feature for OpenStreetMap\u2019s Vespucci Android app that efficiently\
+    \ evaluates input opening hours."
+  - Implemented an evaluator that processes opening hours of 140,000+ locations with
+    Java, Gradle, and Github Actions.
+  - Supported a grammar system of 80+ rules, expanding coverage from 10% to approximately
+    100% of the specification.
+  duration: "May \u2013 Aug 2021"
+  location: Rochester, NY
+  role: Software Engineer Intern
+- company: University of Rochester
+  details:
+  - 'Courses: Artificial Intelligence, Computation & Formal System, Programming Language,
+    Discrete Mathematics.'
+  - Facilitated weekly study sessions for 30 students, focusing on advanced computer
+    science and mathematics concepts.
+  duration: "Sep 2021 \u2013 May 2024"
+  location: Rochester, NY
+  role: Teaching Assistant
+github:
+  alias: goodudetheboy
+  link: https://github.com/goodudetheboy/
+linkedin:
+  alias: in/vuongho
+  link: https://linkedin.com/in/vuongho/
+name: Vuong Ho
+phone: (585) 606-0796
+project_list:
+- details:
+  - Led a team of 5 to create a hyper-personalized trip planning platform tailored
+    to users travel TikTok videos.
+  - Architected and deployed a scalable AWS microservices backend with a Vite frontend,
+    achieving 99.9 uptime and global deployment on Firebase, 40% faster load times,
+    supported by a Github Actions CI/CD pipeline with 90 test coverage.
+  - Received 150+ likes and votes, the most liked project out of 219 teams, in the
+    TikTok TechJam 2024 hackathon.
+  duration: "Jun \u2013 Aug 2024"
+  link: https://devpost.com/software/vietrochack
+  name: SwipeAndFly
+  summary: Hyper-personalized trip planning with TikTok videos.
+- details:
+  - "Led a team of 3 in developing a classroom assistance system that utilizes real-time\
+    \ eye-tracking to detect possible confusing topics using students\u2019 gaze heatmap\
+    \ and provide classroom statistics to instructors with their teaching."
+  - Won Best Education Award out of 43 teams at YHack 2024 hackathon hosted Yale University.
+  duration: "Mar \u2013 May 2024"
+  link: https://devpost.com/software/eduvision-y9fw0g
+  name: EduVision
+  summary: Eye-tracking powered classroom assistance system.
+skills:
+- details:
+  - Python
+  - Java
+  - JavaScript
+  - Typescript
+  - Flutter
+  - Kotlin
+  - HTML/CSS
+  - SQL
+  - C/C++
+  - C#
+  section_name: Languages
+- details:
+  - Gradle
+  - Node.js
+  - MongoDB
+  - AWS
+  - Google Cloud Platform
+  - React.js
+  - Jest
+  - JavaCC
+  - Linux
+  - Docker
+  section_name: Developer Tools
+- details:
+  - VS Code
+  - Git
+  - ChatGPT
+  - Github Actions
+  - Android Studio
+  - SonarCloud
+  - Elasticsearch
+  - Bash
+  section_name: Frameworks
+- details:
+  - Agile
+  - Scrum
+  - DevOps
+  - Test-Driven Development
+  - Slack
+  - Github Projects
+  - Jira
+  section_name: Collaborative Methodologies
+website:
+  alias: vuongho.me
+  link: https://vuongho.me/
+
+Resume end
+
+Job description start:
+NYC Summer Software Engineering Internship
+New York City
+Apply now
+We’re looking for students aspiring to be efficient, productive, and impactful software developers to join our Summer 2025 Engineering Internship Program. Jumpstart your career in a supportive environment that enables you to take on challenging work that directly impacts the business. 
+
+Our 12-week program is designed to expose you to all parts of software development in a growing tech company and prepare you for a full-time engineering career. Our 1:1 mentorship philosophy paired with our small team structure ensures you are being taught the best engineering practices and foundational principles that will help grow your career and allow you to excel quickly and have endless opportunities for impact! 
+
+As a member of our Engineering Program, you’ll join one of our many functional engineering teams as an individual contributor to develop new and well-written code, participate in and contribute to stand-ups, collaborate with team members on program and day-to-day work,, and increase efficiency amongst your team. Whether it’s working on one of our product teams and architecting product tours with React,  building out our foundational systems with our infrastructure teams, or redesigning our mobile apps with our mobile team, you will become an integral part of our growing organization. 
+
+This role is based in our San Francisco office with an office-centric hybrid schedule. Along with most Asanas, you’ll work from this office in person on Mondays, Tuesdays, and Thursdays. Most Asanas have the option to work from home on Wednesdays and Fridays. If you're interviewing for this role, your Talent Acquisition Partner will share more about the in-office requirements. 
+
+Learn more about our Engineering team: 
+
+The Asana Engineering Guide to Intern Mentorship 
+What our 2020 Interns Built! 
+How we build Inclusivity in the Workplace
+What you'll achieve
+
+Learn what it’s like to work as a full-time software developer in a fast growing tech company.
+Make a real impact by contributing to a variety of projects, like building new features, testing infrastructure, implementing subtle interaction behaviors, or designing data models..
+Experience growth and development by being paired with a mentor who will support and guide you through opportunities to stretch and learn.
+Help us maintain a codebase and an award-winning culture, contributing to everything from the broadest strategic discussions to the specifics of updating a small app feature.
+Develop clean, beautiful code and leave it better than you found it.
+Feel supported by a growth-oriented team cheering you on as you take on new challenges
+Participate in Asana’s culture of transparency and distributed responsibility by providing peer feedback to members of your team.
+About you
+
+Your anticipated graduation date is between December 2025 and July 2026
+A constant desire to learn and improve
+A foundational understanding of software development or computer science skills - we want to teach you more! 
+Passion for creating a user friendly experience, down to those little details that matter
+Appreciate productivity and care deeply about helping teams collaborate more effectively and efficiently, including your own
+Excited to be a part of an inclusive culture where we encourage everyone to bring their whole selves to work
+What we’ll offer
+
+Our comprehensive compensation package plays a big part in how we recognize you for the impact you have on our path to achieving our mission. We believe that compensation should be reflective of the value you create relative to the market value of your role. To ensure pay is fair and not impacted by biases, we're committed to looking at market value which is why we check ourselves and conduct a yearly pay equity audit. 
+
+For this role, the estimated pay rate is $64.75 per hour.  The actual rate will vary based on various factors, including market and individual qualifications objectively assessed during the interview process. The listed pay rate above is a guideline, and the pay rate for this role may be modified.
+
+We strive to provide equitable and competitive benefit packages that support our employees worldwide and includes:
+
+Mental health, wellness & fitness benefits
+Career coaching & support 
+In-office culinary options to cater to your dietary preferences 
+These are just some of the benefits we offer, and benefits may vary based on role, country, and local regulations. If you're interviewing for this role, speak with your Talent Acquisition Partner to learn more about the total compensation and benefits for this role.
+
+About us
+
+Asana helps teams orchestrate their work, from small projects to strategic initiatives. Millions of teams around the world rely on Asana to achieve their most important goals, faster. Asana has been named a Top 10 Best Workplace for 5 years in a row, is Fortune's #1 Best Workplace in the Bay Area, and one of Glassdoor’s and Inc.’s Best Places to Work. After spending more than a year physically distanced, Team Asana is safely and mindfully returning to in-person collaboration, incorporating flexibility that adds hybrid elements to our office-centric culture. With 11+ offices all over the world, we are always looking for individuals who care about building technology that drives positive change in the world and a culture where everyone feels that they belong. 
+
+We believe in supporting people to do their best work and thrive, and building a diverse, equitable, and inclusive company is core to our mission. Our goal is to ensure that Asana upholds an inclusive environment where all people feel that they are equally respected and valued, whether they are applying for an open position or working at the company. We provide equal employment opportunities to all applicants without regard to race, color, religion, age, sex, national origin, disability status, genetics, protected veteran status, sexual orientation, gender identity or expression, or any other characteristic protected by law.
+
+#internship
+Job description end:
+
+The application has this question: "There are many valuable skills that aren't taught in the classroom or workplace. What have you learned outside of these environments that you think will make you a great intern here at Stoke?"
+
+With the knowledge of my resume and the job description, answer the above question for me.
