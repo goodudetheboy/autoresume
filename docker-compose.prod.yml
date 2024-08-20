@@ -1,0 +1,25 @@
+services:
+  autoresume:
+    container_name: autoresume
+    build: .
+    restart: always
+    environment:
+      - OPENAI_API_KEY=<OpenAI API key here>
+
+  nginx:
+    container_name: nginx
+    image: jonasal/nginx-certbot
+    restart: always
+    environment:
+      - CERTBOT_EMAIL=hochivuong2002@gmail.com
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - nginx_secrets:/etc/letsencrypt
+      - ./user_conf.d:/etc/nginx/user_conf.d
+    depends_on:
+      - autoresume
+
+volumes:
+  nginx_secrets:
