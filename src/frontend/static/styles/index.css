@@ -177,3 +177,13 @@ body {
 #download-link {
 	margin-bottom: 10px;
 }
+
+/* Answer questions section */
+
+#answer-question-form {
+	height: 100%;
+}
+
+#answer-question-editor {
+	height: 20%;
+}

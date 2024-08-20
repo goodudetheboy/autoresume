@@ -17,11 +17,12 @@
     <div class="control-container">
       <!-- Tabs for navigation -->
       <div class="tabs">
-        <button id="Original-editor-tab-button" class="tablink  defaultOpen"
-          onclick="openTab('Original')">Original</button>
+        <button id="Original-editor-tab-button" class="tablink" onclick="openTab('Original')">Original</button>
         <button id="JobDescription-editor-tab-button" class="tablink" onclick="openTab('JobDescription')">Job
           description</button>
         <button id="Tailored-editor-tab-button" class="tablink" onclick="openTab('Tailored')">Tailored</button>
+        <button id="Answer-editor-tab-button" class="tablink defaultOpen" onclick="openTab('Answer')">Answer
+          questions</button>
       </div>
 
       <!-- Tab content -->
@@ -57,6 +58,26 @@
           placeholder="Your tailored resume will appear here. You can edit or copy this anywhere."></textarea>
         <textarea id="tailored-resume-error-viewer" class="text-editor error-viewer"
           placeholder="Validation results will appear here" disabled></textarea>
+      </div>
+
+      <div id="Answer" class="tabcontent">
+        <h3 class="tab-title-text">Automatically answer question from job application</h3>
+        <p class="tab-title-text">This will help you in answer those pesky job application questions, using the original
+          resume and the provided job description. Please make sure to fill out the "Original" and "Job description"
+          tabs. If you want to make more adjustments to the answer, copy the prompt using "Copy Prompt" button and use
+          it in <a
+            href="https://chatgpt.com/?q=To+user+Make+sure+to+copy+the+prompt+and+paste+it+here,+To+GPT+You+dont+have+to+say+anything&temporary-chat=true"
+            target="_blank">ChatGPT</a>.</p>
+        <form id="answer-question-form">
+          <button id="answer-answer-button" class="tab-button"
+            onclick="resumeAction('validate', 'tailored')">Answer</button>
+          <button id="answer-copy-prompt-button" class="tab-button" onclick="resumeAction('validate', 'tailored')">Copy
+            prompt</button>
+          <textarea id="answer-question-editor" class="text-editor"
+            placeholder="Input job application question here. Be sure to include any word limits."></textarea>
+          <textarea id="answer-error-viewer" class="text-editor error-viewer" placeholder="Answer will appear here"
+            disabled></textarea>
+        </form>
       </div>
     </div>
 
