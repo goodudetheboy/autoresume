@@ -198,10 +198,12 @@ function answerAppQuestion(event) {
   const analysisViewer = document.getElementById("answer-analysis-viewer");
 
   if (!jobDescription || !originalResumeYaml) {
-    document.getElementById("answer-empty-error-text").style.display = "inline";
+    Toastify({
+      text: "Missing original resume or job description!",
+      className: "error-toast",
+      position: "center",
+    }).showToast();
     return;
-  } else {
-    document.getElementById("answer-empty-error-text").style.display = "none";
   }
   disableControlButtons(true);
   fetch(`/api/resume/answer`, {
