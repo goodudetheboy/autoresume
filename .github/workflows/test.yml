@@ -29,13 +29,17 @@ jobs:
         run: venv/bin/pip install -r requirements.txt
 
       - name: Instal LaTeX distribution
-        run: apt-get update && apt-get install -y \
-          texlive-latex-base \
-          texlive-latex-extra \
-          texlive-fonts-recommended \
-          texlive-fonts-extra \
-          texlive-xetex \
-          && apt-get clean \
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y \
+            texlive-latex-base \
+            texlive-latex-extra \
+            texlive-fonts-recommended \
+            texlive-fonts-extra \
+            texlive-xetex
+          sudo apt-get clean
 
       - name: Run Tests
-        run: cd src && python -m unittest
+        run: |
+          cd src
+          python -m unittest
