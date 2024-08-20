@@ -42,4 +42,4 @@ jobs:
       - name: Run Tests
         run: |
           cd src
-          python -m unittest
+          venv/bin/python -m unittest -v
