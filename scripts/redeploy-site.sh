@@ -8,4 +8,4 @@ cd ~/autoresume
 sudo docker compose -f docker-compose.prod.yml down
 
 # Push new containers up
-sudo -E docker compose -f docker-compose.prod.yml up -d --build
+sudo docker compose -f docker-compose.prod.yml up -d --build
