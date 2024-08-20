@@ -4,8 +4,8 @@ services:
     build: .
     restart: always
     environment:
-      - OPENAI_API_KEY=<OpenAI API key here>
-
+      - OPENAI_API_KEY
+    # Set OPENAI_API_KEY in your environment variables
   nginx:
     container_name: nginx
     image: jonasal/nginx-certbot
