@@ -1,6 +1,8 @@
 import unittest
 import yaml
+
 from app import app
+from unittest.mock import patch
 
 
 class ResumeAPITestCase(unittest.TestCase):
@@ -133,3 +135,33 @@ class ResumeAPITestCase(unittest.TestCase):
         }
 
         self.assertEqual(response.get_json(), expected_response)
+
+    @patch("app.answer_app_question")
+    def test_post_answer_app_question(self, mock_answer_app_question):
+        """Test /api/resume/answer (anwer app question) endpoint """
+
+        json_payload = {
+            "resume": "name: Vuong Ho",
+            "job_description": "Job Description",
+            "question": "Question here"
+        }
+
+        mock_analysis = "Analysis here"
+        mock_answer = "Answer here"
+        mock_prompt = "Prompt here"
+
+        mock_answer_app_question.return_value = (
+            {
+                "analysis": mock_analysis,
+                "answer": mock_answer,
+            },
+            mock_prompt)
+
+        response = self.app.post("/api/resume/answer", json=json_payload)
+
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.json, {
+            "analysis": mock_analysis,
+            "answer": mock_answer,
+            "prompt": mock_prompt
+        })
