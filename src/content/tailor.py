@@ -1,9 +1,9 @@
 from jinja2 import Environment, FileSystemLoader
-import io
 import json
-import requests
 import os
 import yaml
+
+from content.utils import send_openai_request
 
 # Setup Jinja2 environment and load template
 file_loader = FileSystemLoader('templates')
@@ -48,25 +48,8 @@ def tailor_resume_by_job_description(resume: dict, job_description: str) -> dict
         "max_tokens": 10000
     }
 
-    response = _send_request(payload, headers)
+    response = send_openai_request(payload, headers)
 
     response_json = json.loads(response)
 
     return response_json
-
-
-def _send_request(
-    payload: dict,
-    headers: dict
-) -> str:
-    payload_bytes = io.BytesIO(json.dumps(payload).encode('utf-8'))
-
-    response = requests.post(
-        url="https://api.openai.com/v1/chat/completions",
-        data=payload_bytes,
-        headers=headers
-    )
-    response_json = response.json()
-    content_raw = response_json["choices"][0]["message"]["content"]
-
-    return content_raw
