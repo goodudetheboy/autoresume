@@ -29,6 +29,4 @@ jobs:
           SSH_IP: ${{ secrets.SSH_IP }}
 
       - name: Redeploy projects
-        run: ssh my-vps 'echo "OPENAI_API_KEY=${OPENAI_API_KEY}" > ~/autoresume/.env && bash ~/autoresume/scripts/redeploy-site.sh'
-        env:
-          OPENAI_API_KEY: ${{ secrets.OPENAI_API_KEY }}
+        run: ssh my-vps 'echo "OPENAI_API_KEY=${{ secrets.OPENAI_API_KEY }}" > ~/autoresume/.env && bash ~/autoresume/scripts/redeploy-site.sh'
