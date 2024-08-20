@@ -166,6 +166,28 @@ function tailorResume() {
     });
 }
 
+let prompt = "";
+
+document
+  .getElementById("answer-copy-prompt-button")
+  .addEventListener('click', function (event) {
+    event.preventDefault();
+    if (prompt) {
+      navigator.clipboard.writeText(prompt);
+      Toastify({
+        text: "Copied!",
+        className: "info-toast",
+        position: "center",
+      }).showToast();
+    } else {
+      Toastify({
+        text: "Click Answer first",
+        className: "error-toast",
+        position: "center",
+      }).showToast();
+    }
+  });
+
 function answerAppQuestion(event) {
   event.preventDefault();
   const jobDescription = document.getElementById("job-description-editor").value;
@@ -198,15 +220,7 @@ function answerAppQuestion(event) {
       answerViewer.value = data.answer;
       analysisViewer.value = data.analysis;
       disableControlButtons(false);
-
-      const prompt = data.prompt;
-      const copyPromptButton = document.getElementById("answer-copy-prompt-button");
-      copyPromptButton.style.disabled = false;
-      document.getElementById("answer-copy-prompt-button").addEventListener('click', function (event) {
-        event.preventDefault();
-        navigator.clipboard.writeText(prompt);
-        alert("Copied!");
-      })
+      prompt = data.prompt;
     })
     .catch(error => {
       let errorMsg = "There is some trouble connecting to the server, please try again";
@@ -214,8 +228,4 @@ function answerAppQuestion(event) {
       analysisViewer.value = errorMsg;
       disableControlButtons(false);
     });
-}
-
-function defaultCopyPrompt() {
-  alert("Click Answer first!!!!")
 }
