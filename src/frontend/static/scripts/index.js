@@ -174,7 +174,7 @@ function answerAppQuestion(event) {
 
   const answerViewer = document.getElementById("answer-answer-viewer");
   const analysisViewer = document.getElementById("answer-analysis-viewer");
-  console.log(jobDescription);
+
   if (!jobDescription || !originalResumeYaml) {
     document.getElementById("answer-empty-error-text").style.display = "inline";
     return;
@@ -198,6 +198,15 @@ function answerAppQuestion(event) {
       answerViewer.value = data.answer;
       analysisViewer.value = data.analysis;
       disableControlButtons(false);
+
+      const prompt = data.prompt;
+      const copyPromptButton = document.getElementById("answer-copy-prompt-button");
+      copyPromptButton.style.disabled = false;
+      document.getElementById("answer-copy-prompt-button").addEventListener('click', function (event) {
+        event.preventDefault();
+        navigator.clipboard.writeText(prompt);
+        alert("Copied!");
+      })
     })
     .catch(error => {
       let errorMsg = "There is some trouble connecting to the server, please try again";
@@ -205,4 +214,8 @@ function answerAppQuestion(event) {
       analysisViewer.value = errorMsg;
       disableControlButtons(false);
     });
+}
+
+function defaultCopyPrompt() {
+  alert("Click Answer first!!!!")
 }

@@ -64,17 +64,21 @@
         <h3 class="tab-title-text">Automatically answer question from job application</h3>
         <p class="tab-title-text">This will help you in answer those pesky job application questions, using the original
           resume and the provided job description. Please make sure to fill out the "Original" and "Job description"
-          tabs. If you want to make more adjustments to the answer, copy the prompt using "Copy Prompt" button and use
+          tabs.
+        </p>
+        <p class="tab-title-text">
+          If you want to make more adjustments to the answer, copy the prompt using "Copy Prompt" button and use
           it in <a
             href="https://chatgpt.com/?q=To+user+Make+sure+to+copy+the+prompt+and+paste+it+here,+To+GPT+You+dont+have+to+say+anything&temporary-chat=true"
-            target="_blank">ChatGPT</a>.</p>
+            target="_blank">ChatGPT</a>. "Copy Prompt" only works after you click "Answer", because I am the king of
+          system design and my system is always without flaws.</p>
         <p id="answer-empty-error-text" class="tab-subtitle-text error-text" style="display: none;">Missing original
           resume or job description!
         </p>
 
         <form id="answer-question-form" onsubmit="answerAppQuestion(event)">
           <button class="tab-button" type="submit">Answer</button>
-          <button class="tab-button" onclick="copyPrompt()">Copy prompt</button>
+          <button id="answer-copy-prompt-button" class="tab-button">Copy prompt</button>
 
           <textarea id="answer-question-editor" class="text-editor" type="text" required
             placeholder="Input job application question here. Be sure to include any word limits."></textarea>
