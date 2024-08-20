@@ -1,0 +1,40 @@
+name: Run Tests
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    name: Run Tests
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Setup Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: "3.11.0"
+
+      - name: Setup Python Virtual Environment
+        run: python -m venv venv
+
+      - name: Install Dependencies
+        run: venv/bin/pip install -r requirements.txt
+
+      - name: Instal LaTeX distribution
+        run: apt-get update && apt-get install -y \
+          texlive-latex-base \
+          texlive-latex-extra \
+          texlive-fonts-recommended \
+          texlive-fonts-extra \
+          texlive-xetex \
+          && apt-get clean \
+          && rm -rf /var/lib/apt/lists/*
+
+      - name: Run Tests
+        run: cd src && python -m unittest
