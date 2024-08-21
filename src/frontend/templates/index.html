@@ -18,11 +18,12 @@
     <div class="control-container">
       <!-- Tabs for navigation -->
       <div class="tabs">
-        <button id="Original-editor-tab-button" class="tablink" onclick="openTab('Original')">Original</button>
+        <button id="Original-editor-tab-button" class="tablink defaultOpen"
+          onclick="openTab('Original')">Original</button>
         <button id="JobDescription-editor-tab-button" class="tablink" onclick="openTab('JobDescription')">Job
           description</button>
         <button id="Tailored-editor-tab-button" class="tablink" onclick="openTab('Tailored')">Tailored</button>
-        <button id="Answer-editor-tab-button" class="tablink defaultOpen" onclick="openTab('Answer')">Answer
+        <button id="Answer-editor-tab-button" class="tablink" onclick="openTab('Answer')">Answer
           questions</button>
       </div>
 
@@ -73,8 +74,7 @@
             href="https://chatgpt.com/?q=To+user+Make+sure+to+copy+the+prompt+and+paste+it+here,+To+GPT+You+dont+have+to+say+anything&temporary-chat=true"
             target="_blank">ChatGPT</a>. "Copy Prompt" only works after you click "Answer", because I am the king of
           system design and my system is always without flaws.</p>
-        <p id="answer-empty-error-text" class="tab-subtitle-text error-text" style="display: none;">Missing original
-          resume or job description!
+        <p id="answer-empty-error-text" class="tab-subtitle-text error-text" style="display: none;">
         </p>
 
         <form id="answer-question-form" onsubmit="answerAppQuestion(event)">
