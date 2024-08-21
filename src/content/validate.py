@@ -29,4 +29,5 @@ def validate_resume(resume_yaml: str) -> tuple[bool, dict | None]:
         }
 
     except Exception as e:
+        print(type(e).__name__)
         return False, {"error": "An unknown error occurred"}

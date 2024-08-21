@@ -7,8 +7,8 @@ import tempfile
 from content.validate import validate_resume
 from content.render import render_data, render_latex_to_pdf
 from content.tailor import tailor_resume_by_job_description
+from content.answer import answer_app_question
 from flask import Flask, render_template, request, jsonify, send_file, send_from_directory
-from pydantic import ValidationError
 
 app = Flask(__name__,
             template_folder="frontend/templates",
@@ -118,6 +118,45 @@ def post_tailor_resume():
     except Exception as e:
         print(e)
         return jsonify({"error": "An unknown error occurred"}), 500
+
+
+@app.route("/api/resume/answer", methods=["POST"])
+def test_post_answer_app_question():
+    try:
+        # Get JSON data from the request
+        data = request.get_json()
+        resume_yaml = data.get("resume")
+        job_description = data.get("job_description")
+        question = data.get("question")
+
+        if resume_yaml is None:
+            return jsonify({"error": "Missing resume"}), 400
+
+        if job_description is None:
+            return jsonify({"error": "Missing job description"}), 400
+
+        if question is None:
+            return jsonify({"error": "Missing app question"}), 400
+
+        result, errors = validate_resume(resume_yaml)
+
+        if not result:
+            return jsonify(errors), 400
+
+        resume = yaml.safe_load(resume_yaml)
+
+        result, prompt = answer_app_question(question, resume, job_description)
+
+        response_json = {
+            "analysis": result["analysis"],
+            "answer": result["answer"],
+            "prompt": prompt
+        }
+
+        return jsonify(response_json), 200
+
+    except Exception as e:
+        return jsonify({"error": f"An unknown error occurred."}), 500
 
 
 if __name__ == "__main__":

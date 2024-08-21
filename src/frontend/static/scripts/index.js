@@ -165,3 +165,69 @@ function tailorResume() {
       disableControlButtons(false);
     });
 }
+
+let prompt = "";
+
+document
+  .getElementById("answer-copy-prompt-button")
+  .addEventListener('click', function (event) {
+    event.preventDefault();
+    if (prompt) {
+      navigator.clipboard.writeText(prompt);
+      Toastify({
+        text: "Copied!",
+        className: "info-toast",
+        position: "center",
+      }).showToast();
+    } else {
+      Toastify({
+        text: "Click Answer first",
+        className: "error-toast",
+        position: "center",
+      }).showToast();
+    }
+  });
+
+function answerAppQuestion(event) {
+  event.preventDefault();
+  const jobDescription = document.getElementById("job-description-editor").value;
+  const originalResumeYaml = document.getElementById("original-resume-editor").value;
+  const question = document.getElementById("answer-question-editor").value;
+
+  const answerViewer = document.getElementById("answer-answer-viewer");
+  const analysisViewer = document.getElementById("answer-analysis-viewer");
+
+  if (!jobDescription || !originalResumeYaml) {
+    Toastify({
+      text: "Missing original resume or job description!",
+      className: "error-toast",
+      position: "center",
+    }).showToast();
+    return;
+  }
+  disableControlButtons(true);
+  fetch(`/api/resume/answer`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      "resume": originalResumeYaml,
+      "job_description": jobDescription,
+      "question": question
+    })
+  })
+    .then(response => response.json())
+    .then(data => {
+      answerViewer.value = data.answer;
+      analysisViewer.value = data.analysis;
+      disableControlButtons(false);
+      prompt = data.prompt;
+    })
+    .catch(error => {
+      let errorMsg = "There is some trouble connecting to the server, please try again";
+      errorMsg += `\nError: ${error}`
+      analysisViewer.value = errorMsg;
+      disableControlButtons(false);
+    });
+}

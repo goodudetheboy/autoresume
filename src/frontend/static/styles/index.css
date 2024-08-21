@@ -177,3 +177,31 @@ body {
 #download-link {
 	margin-bottom: 10px;
 }
+
+/* Answer questions section */
+
+#answer-question-form {
+	height: 100%;
+}
+
+#answer-question-editor {
+	height: 20%;
+}
+
+/* Misc section */
+.error-text {
+	color: red;
+}
+
+.tabcontent .tab-subtitle-text {
+	margin-bottom: 10px;
+}
+
+/* Toast section */
+.error-toast {
+	background: red !important;
+}
+
+.info-toast {
+	background: "linear-gradient(to right, #00b09b, #96c93d)" !important;
+}

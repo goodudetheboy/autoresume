@@ -7,18 +7,19 @@ import subprocess
 # Setup Jinja2 environment and load template
 file_loader = FileSystemLoader("templates")
 env = Environment(
-        loader=file_loader, 
-        comment_start_string="{=",
-        comment_end_string="=}",
-    )
+    loader=file_loader,
+    comment_start_string="{=",
+    comment_end_string="=}",
+)
 template = env.get_template("resume_template.jinja")
 
+
 def render_data(
-        data,
-        resume_name="tailored_resume",
-        output_latex_path=None,
-        output_pdf_path=None
-    ):
+    data,
+    resume_name="tailored_resume",
+    output_latex_path=None,
+    output_pdf_path=None
+):
     """
     Converts a dictionary of resume data to a LaTeX string using a Jinja2 template.
 
@@ -50,12 +51,12 @@ def render_data(
     if output_latex_path:
         with open(os.path.join(output_latex_path, f"{resume_name}.tex"), "w") as latex_file:
             latex_file.write(latex_string)
-    
+
     if output_pdf_path:
         render_latex_to_pdf(latex_string, output_pdf_path, resume_name)
 
-
     return latex_string
+
 
 def render_latex_to_pdf(latex_content, output_pdf_path, resume_name="tailored_resume"):
     try:
@@ -86,6 +87,7 @@ def render_latex_to_pdf(latex_content, output_pdf_path, resume_name="tailored_re
         print("An error occurred when generating pdf file:", str(e))
         return False
 
+
 def read_yaml_and_write_latex(yaml_file, output_file):
     """
     Reads YAML data from a file, generates LaTeX string, and writes it to an output file.
@@ -97,7 +99,6 @@ def read_yaml_and_write_latex(yaml_file, output_file):
     # Load the YAML data
     with open(yaml_file, "r") as file:
         data = yaml.safe_load(file)
-
 
     # Generate LaTeX string from dictionary
     latex_string = render_data(data)
@@ -113,6 +114,7 @@ def read_yaml_and_write_latex(yaml_file, output_file):
 
 # Max size all uppercase with dot at end: 69
 # Max size all lowercase with dot at end: 103
+
 
 def latex_escape(text):
     """
@@ -136,10 +138,11 @@ def latex_escape(text):
         text = text.replace(key, value)
     return text
 
+
 def escape_dict(data):
     """
     Recursively applies the latex_escape function to all string values in a dictionary.
-    
+
     Parameters:
     - data: The dictionary or list to process.
 
