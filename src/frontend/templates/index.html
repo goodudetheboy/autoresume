@@ -34,8 +34,11 @@
           onclick="resumeAction('validate', 'original')">Validate</button>
         <button id="original-render-button" class="tab-button"
           onclick="resumeAction('render', 'original')">Render</button>
+        <button id="original-render-button" class="tab-button" onclick="loadExampleResume()">Load
+          example</button>
         <textarea id="original-resume-editor" class="text-editor resume-editor"
           placeholder="You can edit, copy, or paste your or other's resume here.">{{resume_yaml_template}}</textarea>
+        <textarea id="example-resume" style="display: none;">{{resume_example}}</textarea>
         <textarea id="original-resume-error-viewer" class="text-editor error-viewer"
           placeholder="Validation results will appear here" disabled></textarea>
       </div>

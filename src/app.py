@@ -20,8 +20,10 @@ def index():
     # Load the YAML content
     with open("./templates/resume_template.yaml", "r") as file:
         resume_template = file.read()
+    with open("./templates/resume_example.yaml", "r") as file:
+        resume_example = file.read()
 
-    return render_template("index.html", resume_yaml_template=resume_template)
+    return render_template("index.html", resume_yaml_template=resume_template, resume_example=resume_example)
 
 
 @app.route("/api/resume/validate", methods=["POST"])

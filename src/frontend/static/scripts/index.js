@@ -231,3 +231,8 @@ function answerAppQuestion(event) {
       disableControlButtons(false);
     });
 }
+
+function loadExampleResume() {
+  const exampleResume = document.getElementById("example-resume").value;
+  document.getElementById("original-resume-editor").value = exampleResume;
+}
