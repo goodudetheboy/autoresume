@@ -83,16 +83,18 @@ experience_list:
     location: "Rochester, NY"
     details:
       - "Chosen as one of the top 2% out of 2,500 applicants for the elite Meta & MLH Production Engineering Fellowship."
-      - "Developed a Flask project from scratch and deployed it on cloud servers with Nginx reverse proxy and SSL certificates."
-      - "Leveraged GitHub Actions for CI/CD, test-driven development, and Docker to achieve 90% faster deployment times."
+      - "Develop a Flask project from scratch and deployed it on cloud servers with Nginx reverse proxy and SSL certificates."
+      - "Leverage GitHub Actions for CI/CD, test-driven development, and Docker to achieve 90% faster deployment times."
+      - "Implement extensive server and container monitoring and tracking using Prometheus and cAdvisor with a customized Grafana dashboard, resulting in a 30% reduction in system downtime and a 80% decrease in error detection time."
 
   - company: "Rochester Human-Computer Interaction Lab"
     duration: "Mar 2024 -- Present"
     role: "Research Assistant"
     location: "Rochester, NY"
     details:
-      - "Currently researching an AI-powered device to assist deaf or hard-of-hearing children in early language development."
-      - "Migrated the current system to AWS, enhancing ease of use, which resulted in an 80% positive feedback in a recent study."
+      - "Research and develop an AI/ML-powered tool to assist deaf or hard-of-hearing children in early language development."
+      - "Implement ASL word recommendation strategies with Stanza pipelines, BERT models, and part-of-speech analysis."
+      - "Rearchitect the legacy system into a portable version with Flask, JavaScript, and Docker and deploy it on AWS, enabling remote user studies and reducing data collection time by 1 week per participant while doubling user participation rate."
 
   - company: "Ho Chi Minh City Information Security Services Company (Hissc)"
     duration: "May -- Jul 2023"
@@ -129,6 +131,7 @@ experience_list:
       - "Engineered a key feature for OpenStreetMap's Vespucci Android app that efficiently evaluates user input opening hours."
       - "Implemented an evaluator that processes opening hours of 140,000+ locations with Java, Gradle, and Github Actions."
       - "Supported a grammar system of 80+ rules, expanding coverage from 10% to approximately 100% of the specification."
+      - "Contributed 10+ bug fixes and improvements to dependent libraries on Maven Central during feature development."
 
   - company: "University of Rochester"
     duration: "Sep 2021 -- May 2024"
