@@ -102,6 +102,7 @@ function resumeAction(action, type) {
         resumeViewer.src = pdfUrl;
         errorViewer.value = "Your resume is generated! 🤩🤩🤩🤩🤩"
         openResume(type);
+        toast("Finished rendering your resume.", "success");
       } else {
         result = data.result;
         if (result == "invalid") {
@@ -112,8 +113,10 @@ function resumeAction(action, type) {
             errorMsg += `\n\t${data.details[i]}`;
           }
           errorViewer.value = errorMsg;
+          toast("Oops, your resume is invalid, please check the box below for more errors.", "error");
         } else if (result === "valid") {
           errorViewer.value = "Your resume looks good! ✅✅✅✅✅"
+          toast("Oops, your resume is invalid, please check the box below for more errors.", "error");
         } else {
           errorViewer.value = "An unknown error has occured 💀"
         }
@@ -137,6 +140,7 @@ function tailorResume() {
   if (!companyName || !jobDescription) {
     return;
   }
+  toast(`Now tailoring your resume for ${companyName}.`, "info");
   disableControlButtons(true);
   fetch(`/api/resume/tailor`, {
     method: "POST",
@@ -155,6 +159,7 @@ function tailorResume() {
       errorViewer.value = "Your resume has been tailored ⭐⭐⭐⭐⭐\n Now rendering it for you..."
       let keywords = data.keywords.join(", ");
       keywordsList.innerText = `Keywords: ${keywords}`
+      toast("Finished tailoring your resume, now rendering.", "success");
       openTab("Tailored");
       resumeAction("render", "tailored");
     })
@@ -174,17 +179,9 @@ document
     event.preventDefault();
     if (prompt) {
       navigator.clipboard.writeText(prompt);
-      Toastify({
-        text: "Copied!",
-        className: "info-toast",
-        position: "center",
-      }).showToast();
+      toast("Copied!", "info");
     } else {
-      Toastify({
-        text: "Click Answer first",
-        className: "error-toast",
-        position: "center",
-      }).showToast();
+      toast("Click Answer first", "error");
     }
   });
 
@@ -198,11 +195,7 @@ function answerAppQuestion(event) {
   const analysisViewer = document.getElementById("answer-analysis-viewer");
 
   if (!jobDescription || !originalResumeYaml) {
-    Toastify({
-      text: "Missing original resume or job description!",
-      className: "error-toast",
-      position: "center",
-    }).showToast();
+    toast("Missing original resume or job description!", "error");
     return;
   }
   disableControlButtons(true);
@@ -223,12 +216,14 @@ function answerAppQuestion(event) {
       analysisViewer.value = data.analysis;
       disableControlButtons(false);
       prompt = data.prompt;
+      toast("Successfully generated your answer!", "success");
     })
     .catch(error => {
       let errorMsg = "There is some trouble connecting to the server, please try again";
       errorMsg += `\nError: ${error}`
       analysisViewer.value = errorMsg;
       disableControlButtons(false);
+      toast("Can't connect to server :'(", "error");
     });
 }
 

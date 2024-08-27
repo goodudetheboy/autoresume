@@ -18,12 +18,11 @@
     <div class="control-container">
       <!-- Tabs for navigation -->
       <div class="tabs">
-        <button id="Original-editor-tab-button" class="tablink defaultOpen"
-          onclick="openTab('Original')">Original</button>
+        <button id="Original-editor-tab-button" class="tablink" onclick="openTab('Original')">Original</button>
         <button id="JobDescription-editor-tab-button" class="tablink" onclick="openTab('JobDescription')">Job
           description</button>
         <button id="Tailored-editor-tab-button" class="tablink" onclick="openTab('Tailored')">Tailored</button>
-        <button id="Answer-editor-tab-button" class="tablink" onclick="openTab('Answer')">Answer
+        <button id="Answer-editor-tab-button" class="tablink defaultOpen" onclick="openTab('Answer')">Answer
           questions</button>
       </div>
 
@@ -77,13 +76,27 @@
             href="https://chatgpt.com/?q=To+user+Make+sure+to+copy+the+prompt+and+paste+it+here,+To+GPT+You+dont+have+to+say+anything&temporary-chat=true"
             target="_blank">ChatGPT</a>. "Copy Prompt" only works after you click "Answer", because I am the king of
           system design and my system is always without flaws.</p>
+        <p class="tab-title-text">
+          You can also define special requests, for example, write a cold email to recruiter, by editing
+          and adding special request presets below.</p>
         <p id="answer-empty-error-text" class="tab-subtitle-text error-text" style="display: none;">
         </p>
 
         <form id="answer-question-form" onsubmit="answerAppQuestion(event)">
-          <button class="tab-button" type="submit">Answer</button>
-          <button id="answer-copy-prompt-button" class="tab-button">Copy prompt</button>
-
+          <div class="tab-full-width-section">
+            <button class="tab-button" type="submit">Answer</button>
+            <button id="answer-copy-prompt-button" class="tab-button">Copy prompt</button>
+          </div>
+          <div class="tab-full-width-section">
+            Current preset:
+            <select name="answer-preset" id="answer-question-preset" onchange="updateTextarea()">
+              <option value="Application question">Application question</option>
+              <option value="Write cold email">Write cold email</option>
+            </select>
+            <input type="text" id="answer-question-preset-name" placeholder="Enter preset name">
+            <button type="button" class="tab-button" onclick="addPreset()">Add</button>
+            <button type="button" class="tab-button" onclick="removePreset()">Remove</button>
+          </div>
           <textarea id="answer-question-editor" class="text-editor" type="text" required
             placeholder="Input job application question here. Be sure to include any word limits."></textarea>
           <h4 class="tab-subtitle-text">Answer</h4>
@@ -114,7 +127,9 @@
       </div>
     </div>
   </div>
+  <script src="../static/scripts/utils.js"></script>
   <script src="../static/scripts/index.js"></script>
+  <script src="../static/scripts/preset.js"></script>
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 </body>
 
