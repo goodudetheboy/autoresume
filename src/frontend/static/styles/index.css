@@ -203,9 +203,13 @@ body {
 
 /* Toast section */
 .error-toast {
-	background: red !important;
+	background: linear-gradient(to right, #ff4b2b, #ff416c) !important;
 }
 
 .info-toast {
-	background: "linear-gradient(to right, #00b09b, #96c93d)" !important;
+	background: linear-gradient(to right, #00b09b, #96c93d) !important;
+}
+
+.success-toast {
+	background: linear-gradient(to right, #a8e063, #56ab2f) !important;
 }

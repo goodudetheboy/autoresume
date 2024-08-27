@@ -50,7 +50,7 @@ function addPreset() {
 
   Toastify({
     text: `Successfully added preset with name "${presetName}". Enjoy, nerd.`,
-    className: "info-toast",
+    className: "success-toast",
     position: "center",
   }).showToast();
 }
@@ -64,7 +64,7 @@ function removePreset() {
     select.removeChild(selectedOption);
     removePresetFromStorage(selectedOption.value);
     Toastify({
-      text: `Succesfully removed preset ${selectedOption.value}.`,
+      text: `Succesfully removed preset "${selectedOption.value}".`,
       className: "info-toast",
       position: "center",
     }).showToast();
