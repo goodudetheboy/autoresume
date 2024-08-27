@@ -24,11 +24,7 @@ function addPreset() {
 
   // Prevent adding duplicates
   if (Array.from(select.options).some(option => option.value === presetName)) {
-    Toastify({
-      text: `Can't add duplicate preset with name "${presetName}".`,
-      className: "error-toast",
-      position: "center",
-    }).showToast();
+    toast(`Can't add duplicate preset with name "${presetName}".`, "error");
     return;
   }
 
@@ -47,12 +43,7 @@ function addPreset() {
   savePreset(presetName, presetText);
 
   presetNameInput.value = "";
-
-  Toastify({
-    text: `Successfully added preset with name "${presetName}". Enjoy, nerd.`,
-    className: "success-toast",
-    position: "center",
-  }).showToast();
+  toast(`Successfully added preset with name "${presetName}". Enjoy, nerd.`, "success");
 }
 
 function removePreset() {
@@ -63,17 +54,9 @@ function removePreset() {
   if (selectedOption && !(selectedOption.value in defaultPresets)) {
     select.removeChild(selectedOption);
     removePresetFromStorage(selectedOption.value);
-    Toastify({
-      text: `Succesfully removed preset "${selectedOption.value}".`,
-      className: "info-toast",
-      position: "center",
-    }).showToast();
+    toast(`Succesfully removed preset "${selectedOption.value}".`, "info");
   } else {
-    Toastify({
-      text: "Can't remove default preset, cuh.",
-      className: "error-toast",
-      position: "center",
-    }).showToast();
+    toast("Can't remove default preset, cuh.", "error");
   }
 }
 
