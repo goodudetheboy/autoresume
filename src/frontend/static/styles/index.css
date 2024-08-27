@@ -197,6 +197,10 @@ body {
 	margin-bottom: 10px;
 }
 
+.tabcontent .tab-full-width-section {
+	width: 100%;
+}
+
 /* Toast section */
 .error-toast {
 	background: red !important;
