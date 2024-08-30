@@ -41,28 +41,30 @@ skills:
   - section_name: "Developer Tools"
     details:
       [
-        "Gradle",
-        "Node.js",
-        "MongoDB",
-        "AWS",
-        "Google Cloud Platform",
-        "React.js",
-        "Jest",
-        "JavaCC",
-        "Linux",
-        "Docker",
+        "Git",
+        "VS Code",
+        "Bash",
+        "GitHub Actions",
+        "Android Studio",
+        "SonarCloud",
+        "Elasticsearch",
+        "MySQL",
+        "NoSQL",
       ]
   - section_name: "Frameworks"
     details:
       [
-        "VS Code",
-        "Git",
-        "ChatGPT",
-        "Github Actions",
-        "Android Studio",
-        "SonarCloud",
-        "Elasticsearch",
-        "Bash",
+        "Docker",
+        "AWS",
+        "GCP",
+        "Linux",
+        "Node.js",
+        "React.js",
+        "Gradle",
+        "MongoDB",
+        "Jest",
+        "JavaCC",
+        "RESTful API",
       ]
   - section_name: "Collaborative Methodologies"
     details:
@@ -70,10 +72,9 @@ skills:
         "Agile",
         "Scrum",
         "DevOps",
+        "Lean",
         "Test-Driven Development",
-        "Slack",
-        "Github Projects",
-        "Jira",
+        "Pair Programming",
       ]
 
 experience_list:
@@ -83,7 +84,7 @@ experience_list:
     location: "Rochester, NY"
     details:
       - "Chosen as one of the top 2% out of 2,500 applicants for the elite Meta & MLH Production Engineering Fellowship."
-      - "Develop a dynamic web-based application with Python, Flask, and Javascript with MySQL database for data handling."
+      - "Develop a dynamic blogging application and RESTful APIs with Python, Flask, and Javascript with MySQL database."
       - "Administer and deploy on Linux systems on cloud servers with Nginx reverse proxy and auto-renewing SSL certificates."
       - "Leverage GitHub Actions for CI/CD, test-driven development, and Docker to achieve 90% faster deployment times."
       - "Implement extensive server and container monitoring and tracking using Prometheus and cAdvisor with a customized Grafana dashboard, resulting in a 30% reduction in system downtime and a 80% decrease in error detection time."

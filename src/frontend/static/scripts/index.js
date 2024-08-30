@@ -116,7 +116,7 @@ function resumeAction(action, type) {
           toast("Oops, your resume is invalid, please check the box below for more errors.", "error");
         } else if (result === "valid") {
           errorViewer.value = "Your resume looks good! ✅✅✅✅✅"
-          toast("Oops, your resume is invalid, please check the box below for more errors.", "error");
+          toast("Checked your resume and it looks good!", "success");
         } else {
           errorViewer.value = "An unknown error has occured 💀"
         }
