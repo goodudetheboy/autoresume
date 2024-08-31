@@ -31,7 +31,7 @@ function addPreset() {
   // Create a new option element
   const newOption = document.createElement("option");
   newOption.value = presetName;
-  newOption.textContent = presetText;
+  newOption.textContent = presetName;
 
   // Add the new option to the select element
   select.appendChild(newOption);
