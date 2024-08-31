@@ -16,7 +16,7 @@ function initializeDefaultPresets() {
 function addPreset() {
   const presetNameInput = document.getElementById("answer-question-preset-name");
   const presetName = presetNameInput.value.trim();
-  const presetText = document.getElementById("answer-question-preset-name").value.trim();
+  const presetText = document.getElementById("answer-question-editor").value.trim();
 
   if (presetName === "" || presetText === "") return;
 
@@ -31,7 +31,7 @@ function addPreset() {
   // Create a new option element
   const newOption = document.createElement("option");
   newOption.value = presetName;
-  newOption.textContent = presetName;
+  newOption.textContent = presetText;
 
   // Add the new option to the select element
   select.appendChild(newOption);
